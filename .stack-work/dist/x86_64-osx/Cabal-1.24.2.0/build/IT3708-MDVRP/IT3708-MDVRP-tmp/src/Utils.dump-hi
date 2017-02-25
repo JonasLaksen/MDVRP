@@ -1,0 +1,204 @@
+
+==================== FINAL INTERFACE ====================
+2017-02-24 12:30:41.607104 UTC
+
+interface main@main:Utils 8002
+  interface hash: 18db4e496634a1e234d5879e83c50384
+  ABI hash: 094242648892b9075bb200bf6de38af4
+  export-list hash: e6e25c60e3b9213258a6dd3fc7c7bb38
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 1d2122a9eeb2223310b2d1f91e6dd3a2
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Utils.distance
+  Utils.insertInto
+  Utils.insertInto'
+  Utils.position
+  Utils.prettyCustomer
+  Utils.prettyRoute
+  Utils.prettySolution
+  Utils.shrink
+  Utils.totalDistance
+module dependencies: Types
+package dependencies: base-4.9.1.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
+import  -/  base-4.9.1.0:Data.Tuple 7dc4bbb45d2e69c991ffac438beeca11
+import  -/  base-4.9.1.0:Debug.Trace a9edf3aec504f4423d8ba829ab373a25
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Float 33e2b9ffe427edd6a5c2fd6a3b26703c
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Real 82e4e59051a13dba1da63e1e970a69e6
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  Types 84d440671d91bc7127fd44e7871db9b3
+  exports: 031c722d2eaf5c00cf8059beff2d5b0e
+  Customer f75d8487e3b128e128ef94d19db2ae50
+  Entity ff31e4bda671bf82b6a5ed878955602f
+  Point 4566a5dabcd3c5255e6731e0b7be94ba
+  Route 1575af41b020866d7a49276c2048a2ed
+291106054c4d8b27d6c9c922ac6045fc
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Utils.$trModule2 Utils.$trModule1) -}
+6a4d1fe5f096b432355a31315328d1d2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Utils"#) -}
+1e6be541f8d090dab52c7f466e538240
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+da9579ee8bd85285ba689ad0b124bc6d
+  $winsertInto' :: a -> GHC.Prim.Int# -> [a] -> [a]
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><S,1*U><L,U>,
+     Inline: [0] -}
+a28fa076170498cd4f9a77cfa84bae36
+  distance :: Types.Point -> Types.Point -> GHC.Types.Float
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)S(S)),1*U(1*U(U),1*U(U))><S(S(S)S(S)),1*U(1*U(U),1*U(U))>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: (GHC.Types.Int, GHC.Types.Int))
+                   (ds1 :: (GHC.Types.Int, GHC.Types.Int)) ->
+                 case ds of wild { (,) a1 a2 ->
+                 case ds1 of wild1 { (,) b1 b2 ->
+                 case a1 of wild2 { GHC.Types.I# x ->
+                 case b1 of wild3 { GHC.Types.I# y ->
+                 case a2 of wild4 { GHC.Types.I# x1 ->
+                 case b2 of wild5 { GHC.Types.I# y1 ->
+                 let {
+                   x2 :: GHC.Prim.Int# = GHC.Prim.-# x1 y1
+                 } in
+                 let {
+                   x3 :: GHC.Prim.Int# = GHC.Prim.-# x y
+                 } in
+                 GHC.Types.F#
+                   (GHC.Prim.sqrtFloat#
+                      (GHC.Prim.int2Float#
+                         (GHC.Prim.+#
+                            (GHC.Prim.*# x3 x3)
+                            (GHC.Prim.*# x2 x2)))) } } } } } }) -}
+60cd49ced65904c6638f8b1311317d83
+  insertInto :: a -> GHC.Types.Int -> [[a]] -> [[a]]
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><L,1*U(U)><S,1*U> -}
+10e87da631121b2189367e2508f280cb
+  insertInto' :: a -> GHC.Types.Int -> [a] -> [a]
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><S(S),1*U(1*U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a (w :: a) (w1 :: GHC.Types.Int) (w2 :: [a]) ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 Utils.$winsertInto' @ a w ww1 w2 }) -}
+3a68b41abe4a6c1382463521dfb9f3c8
+  position :: Types.Entity -> Types.Point
+  {- Arity: 1, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild {
+                   [] -> Utils.position1
+                   : ds1 ds2
+                   -> case ds2 of wild1 {
+                        [] -> Utils.position1
+                        : x ds3
+                        -> case ds3 of wild2 {
+                             [] -> Utils.position1 : y ds4 -> (x, y) } } }) -}
+14dbc72b8f1aead2bab5e47526a5d26d
+  position1 :: Types.Point
+  {- Strictness: x -}
+800934eb71478c7a2f0c3dcf3cf213a0
+  prettyCustomer :: Types.Customer -> GHC.Types.Int
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild { [] -> Utils.prettyCustomer1 : id ds1 -> id }) -}
+0a8e0f757ca987c16a9d98c51f13c98e
+  prettyCustomer1 :: GHC.Types.Int
+  {- Strictness: x -}
+65427d08091ef76c52d457a986d51c7b
+  prettyRoute :: Types.Route -> [GHC.Types.Int]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.map
+                   @ Types.Customer
+                   @ GHC.Types.Int
+                   Utils.prettyCustomer) -}
+301b5957e3525cfd6469ecf4abf821bd
+  prettySolution :: [Types.Route] -> [[GHC.Types.Int]]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.map
+                   @ Types.Route
+                   @ [GHC.Types.Int]
+                   Utils.prettyRoute) -}
+3c0a77c22b1e38e853f646c700901a6c
+  shrink :: [[a]] -> [[a]]
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (\ @ a -> GHC.List.filter @ [a] (Utils.shrink1 @ a)) -}
+a14d48367d28cf9e3b9840a399d19135
+  shrink1 :: [a] -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (x :: [a]) ->
+                 case GHC.List.$wlenAcc @ a x 0# of ww2 { DEFAULT ->
+                 GHC.Prim.tagToEnum# @ GHC.Types.Bool (GHC.Prim.># ww2 0#) }) -}
+0ee0dc98a6c8019271a23f54b1792f3c
+  totalDistance :: [Types.Point] -> GHC.Types.Float
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ccs :: [Types.Point]) ->
+                 case ccs of wild {
+                   [] -> Utils.totalDistance2
+                   : c circle
+                   -> letrec {
+                        $wgo :: [(GHC.Types.Int, GHC.Types.Int)]
+                                -> (# (GHC.Types.Int, GHC.Types.Int), GHC.Types.Float #)
+                          {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+                        = \ (w :: [(GHC.Types.Int, GHC.Types.Int)]) ->
+                          case w of wild1 {
+                            [] -> (# c, Utils.totalDistance1 #)
+                            : y ys
+                            -> (# y,
+                                  case $wgo ys of ww { (#,#) ww1 ww2 ->
+                                  case ww2 of wild2 { GHC.Types.F# x ->
+                                  case y of wild3 { (,) a1 a2 ->
+                                  case ww1 of wild4 { (,) b1 b2 ->
+                                  case a1 of wild5 { GHC.Types.I# x1 ->
+                                  case b1 of wild6 { GHC.Types.I# y1 ->
+                                  case a2 of wild7 { GHC.Types.I# x2 ->
+                                  case b2 of wild8 { GHC.Types.I# y2 ->
+                                  let {
+                                    x3 :: GHC.Prim.Int# = GHC.Prim.-# x1 y1
+                                  } in
+                                  let {
+                                    x4 :: GHC.Prim.Int# = GHC.Prim.-# x2 y2
+                                  } in
+                                  GHC.Types.F#
+                                    (GHC.Prim.plusFloat#
+                                       x
+                                       (GHC.Prim.sqrtFloat#
+                                          (GHC.Prim.int2Float#
+                                             (GHC.Prim.+#
+                                                (GHC.Prim.*# x3 x3)
+                                                (GHC.Prim.*# x4 x4))))) } } } } } } } } #) }
+                      } in
+                      case $wgo wild of ww { (#,#) ww1 ww2 -> ww2 } }) -}
+7000c677698ffa9d9484cec49d22b7af
+  totalDistance1 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.0#) -}
+dc911029f539140e6045f7d7b35e4002
+  totalDistance2 :: GHC.Types.Float
+  {- Strictness: x -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

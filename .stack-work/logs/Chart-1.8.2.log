@@ -1,0 +1,47 @@
+Configuring Chart-1.8.2...
+Building Chart-1.8.2...
+Preprocessing library Chart-1.8.2...
+[ 1 of 36] Compiling Numeric.Histogram ( Numeric/Histogram.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Numeric/Histogram.o )
+[ 2 of 36] Compiling Graphics.Rendering.Chart.Utils ( Graphics/Rendering/Chart/Utils.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Utils.o )
+[ 3 of 36] Compiling Graphics.Rendering.Chart.Geometry ( Graphics/Rendering/Chart/Geometry.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Geometry.o )
+[ 4 of 36] Compiling Graphics.Rendering.Chart.Backend.Types ( Graphics/Rendering/Chart/Backend/Types.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Backend/Types.o )
+[ 5 of 36] Compiling Graphics.Rendering.Chart.Backend.Impl ( Graphics/Rendering/Chart/Backend/Impl.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Backend/Impl.o )
+[ 6 of 36] Compiling Graphics.Rendering.Chart.Backend ( Graphics/Rendering/Chart/Backend.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Backend.o )
+[ 7 of 36] Compiling Graphics.Rendering.Chart.Drawing ( Graphics/Rendering/Chart/Drawing.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Drawing.o )
+[ 8 of 36] Compiling Graphics.Rendering.Chart.Plot.Types ( Graphics/Rendering/Chart/Plot/Types.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Plot/Types.o )
+[ 9 of 36] Compiling Graphics.Rendering.Chart.Plot.Annotation ( Graphics/Rendering/Chart/Plot/Annotation.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Plot/Annotation.o )
+[10 of 36] Compiling Graphics.Rendering.Chart.Plot.Candle ( Graphics/Rendering/Chart/Plot/Candle.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Plot/Candle.o )
+[11 of 36] Compiling Graphics.Rendering.Chart.Plot.ErrBars ( Graphics/Rendering/Chart/Plot/ErrBars.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Plot/ErrBars.o )
+[12 of 36] Compiling Graphics.Rendering.Chart.Plot.FillBetween ( Graphics/Rendering/Chart/Plot/FillBetween.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Plot/FillBetween.o )
+[13 of 36] Compiling Graphics.Rendering.Chart.Plot.Hidden ( Graphics/Rendering/Chart/Plot/Hidden.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Plot/Hidden.o )
+[14 of 36] Compiling Graphics.Rendering.Chart.Plot.Histogram ( Graphics/Rendering/Chart/Plot/Histogram.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Plot/Histogram.o )
+[15 of 36] Compiling Graphics.Rendering.Chart.Plot.Lines ( Graphics/Rendering/Chart/Plot/Lines.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Plot/Lines.o )
+[16 of 36] Compiling Graphics.Rendering.Chart.Plot.Points ( Graphics/Rendering/Chart/Plot/Points.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Plot/Points.o )
+[17 of 36] Compiling Graphics.Rendering.Chart.Renderable ( Graphics/Rendering/Chart/Renderable.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Renderable.o )
+[18 of 36] Compiling Graphics.Rendering.Chart.Grid ( Graphics/Rendering/Chart/Grid.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Grid.o )
+[19 of 36] Compiling Graphics.Rendering.Chart.Legend ( Graphics/Rendering/Chart/Legend.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Legend.o )
+[20 of 36] Compiling Graphics.Rendering.Chart.Plot.Pie ( Graphics/Rendering/Chart/Plot/Pie.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Plot/Pie.o )
+[21 of 36] Compiling Graphics.Rendering.Chart.SparkLine ( Graphics/Rendering/Chart/SparkLine.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/SparkLine.o )
+[22 of 36] Compiling Graphics.Rendering.Chart.Axis.Types ( Graphics/Rendering/Chart/Axis/Types.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Axis/Types.o )
+[23 of 36] Compiling Graphics.Rendering.Chart.Axis.Unit ( Graphics/Rendering/Chart/Axis/Unit.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Axis/Unit.o )
+[24 of 36] Compiling Graphics.Rendering.Chart.Axis.LocalTime ( Graphics/Rendering/Chart/Axis/LocalTime.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Axis/LocalTime.o )
+[25 of 36] Compiling Graphics.Rendering.Chart.Axis.Indexed ( Graphics/Rendering/Chart/Axis/Indexed.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Axis/Indexed.o )
+[26 of 36] Compiling Graphics.Rendering.Chart.Axis.Floating ( Graphics/Rendering/Chart/Axis/Floating.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Axis/Floating.o )
+[27 of 36] Compiling Graphics.Rendering.Chart.Axis.Int ( Graphics/Rendering/Chart/Axis/Int.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Axis/Int.o )
+[28 of 36] Compiling Graphics.Rendering.Chart.Axis ( Graphics/Rendering/Chart/Axis.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Axis.o )
+[29 of 36] Compiling Graphics.Rendering.Chart.Plot.AreaSpots ( Graphics/Rendering/Chart/Plot/AreaSpots.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Plot/AreaSpots.o )
+[30 of 36] Compiling Graphics.Rendering.Chart.Plot.Bars ( Graphics/Rendering/Chart/Plot/Bars.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Plot/Bars.o )
+[31 of 36] Compiling Graphics.Rendering.Chart.Plot.Vectors ( Graphics/Rendering/Chart/Plot/Vectors.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Plot/Vectors.o )
+
+Graphics/Rendering/Chart/Plot/Vectors.hs:27:1: warning: [-Wunused-imports]
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+[32 of 36] Compiling Graphics.Rendering.Chart.Plot ( Graphics/Rendering/Chart/Plot.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Plot.o )
+[33 of 36] Compiling Graphics.Rendering.Chart.Layout ( Graphics/Rendering/Chart/Layout.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Layout.o )
+[34 of 36] Compiling Graphics.Rendering.Chart.State ( Graphics/Rendering/Chart/State.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/State.o )
+[35 of 36] Compiling Graphics.Rendering.Chart ( Graphics/Rendering/Chart.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart.o )
+[36 of 36] Compiling Graphics.Rendering.Chart.Easy ( Graphics/Rendering/Chart/Easy.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/Chart/Easy.o )
+Installing library in
+/Users/futurnur/HaskellProjects/IT3708-MDVRP/.stack-work/install/x86_64-osx/lts-8.2/8.0.2/lib/x86_64-osx-ghc-8.0.2/Chart-1.8.2-LNvEKLHebCdAZizS2ua1Ix
+Registering Chart-1.8.2...
