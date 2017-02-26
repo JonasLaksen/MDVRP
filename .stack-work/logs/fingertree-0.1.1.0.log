@@ -4,6 +4,9 @@ Preprocessing library fingertree-0.1.1.0...
 [1 of 3] Compiling Data.FingerTree  ( Data/FingerTree.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/FingerTree.o )
 [2 of 3] Compiling Data.IntervalMap.FingerTree ( Data/IntervalMap/FingerTree.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/IntervalMap/FingerTree.o )
 [3 of 3] Compiling Data.PriorityQueue.FingerTree ( Data/PriorityQueue/FingerTree.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/PriorityQueue/FingerTree.o )
+[1 of 3] Compiling Data.FingerTree  ( Data/FingerTree.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/FingerTree.p_o )
+[2 of 3] Compiling Data.IntervalMap.FingerTree ( Data/IntervalMap/FingerTree.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/IntervalMap/FingerTree.p_o )
+[3 of 3] Compiling Data.PriorityQueue.FingerTree ( Data/PriorityQueue/FingerTree.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/PriorityQueue/FingerTree.p_o )
 Installing library in
 /Users/futurnur/.stack/snapshots/x86_64-osx/lts-8.2/8.0.2/lib/x86_64-osx-ghc-8.0.2/fingertree-0.1.1.0-Aiaf912zjZGHvH3XyjxrYA
 Registering fingertree-0.1.1.0...

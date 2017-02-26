@@ -4,6 +4,9 @@ Preprocessing library diagrams-svg-1.4.1...
 [1 of 3] Compiling Graphics.Rendering.SVG ( src/Graphics/Rendering/SVG.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/SVG.o )
 [2 of 3] Compiling Diagrams.Backend.SVG ( src/Diagrams/Backend/SVG.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Diagrams/Backend/SVG.o )
 [3 of 3] Compiling Diagrams.Backend.SVG.CmdLine ( src/Diagrams/Backend/SVG/CmdLine.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Diagrams/Backend/SVG/CmdLine.o )
+[1 of 3] Compiling Graphics.Rendering.SVG ( src/Graphics/Rendering/SVG.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Rendering/SVG.p_o )
+[2 of 3] Compiling Diagrams.Backend.SVG ( src/Diagrams/Backend/SVG.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Diagrams/Backend/SVG.p_o )
+[3 of 3] Compiling Diagrams.Backend.SVG.CmdLine ( src/Diagrams/Backend/SVG/CmdLine.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Diagrams/Backend/SVG/CmdLine.p_o )
 Installing library in
 /Users/futurnur/HaskellProjects/IT3708-MDVRP/.stack-work/install/x86_64-osx/lts-8.2/8.0.2/lib/x86_64-osx-ghc-8.0.2/diagrams-svg-1.4.1-L8E7iCqfznJKnVcn0OMCrd
 Registering diagrams-svg-1.4.1...

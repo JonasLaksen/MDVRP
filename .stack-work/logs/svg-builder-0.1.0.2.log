@@ -6,6 +6,11 @@ Preprocessing library svg-builder-0.1.0.2...
 [3 of 5] Compiling Graphics.Svg.Elements ( src/Graphics/Svg/Elements.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Svg/Elements.o )
 [4 of 5] Compiling Graphics.Svg.Attributes ( src/Graphics/Svg/Attributes.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Svg/Attributes.o )
 [5 of 5] Compiling Graphics.Svg     ( src/Graphics/Svg.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Svg.o )
+[1 of 5] Compiling Graphics.Svg.Path ( src/Graphics/Svg/Path.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Svg/Path.p_o )
+[2 of 5] Compiling Graphics.Svg.Core ( src/Graphics/Svg/Core.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Svg/Core.p_o )
+[3 of 5] Compiling Graphics.Svg.Elements ( src/Graphics/Svg/Elements.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Svg/Elements.p_o )
+[4 of 5] Compiling Graphics.Svg.Attributes ( src/Graphics/Svg/Attributes.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Svg/Attributes.p_o )
+[5 of 5] Compiling Graphics.Svg     ( src/Graphics/Svg.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Svg.p_o )
 Installing library in
 /Users/futurnur/.stack/snapshots/x86_64-osx/lts-8.2/8.0.2/lib/x86_64-osx-ghc-8.0.2/svg-builder-0.1.0.2-exbsHIArm620HU13eWwlc
 Registering svg-builder-0.1.0.2...

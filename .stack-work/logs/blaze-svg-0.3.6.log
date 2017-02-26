@@ -12,6 +12,17 @@ Preprocessing library blaze-svg-0.3.6...
 
 src/Text/Blaze/Svg11.hs:97:1: warning: [-Wunused-imports]
     The import of ‘.’ from module ‘Prelude’ is redundant
+[1 of 8] Compiling Text.Blaze.Svg11.Attributes ( src/Text/Blaze/Svg11/Attributes.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Text/Blaze/Svg11/Attributes.p_o )
+[2 of 8] Compiling Text.Blaze.Svg.Renderer.Utf8 ( src/Text/Blaze/Svg/Renderer/Utf8.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Text/Blaze/Svg/Renderer/Utf8.p_o )
+[3 of 8] Compiling Text.Blaze.Svg.Renderer.Text ( src/Text/Blaze/Svg/Renderer/Text.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Text/Blaze/Svg/Renderer/Text.p_o )
+[4 of 8] Compiling Text.Blaze.Svg.Renderer.String ( src/Text/Blaze/Svg/Renderer/String.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Text/Blaze/Svg/Renderer/String.p_o )
+[5 of 8] Compiling Text.Blaze.Svg.Renderer.Pretty ( src/Text/Blaze/Svg/Renderer/Pretty.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Text/Blaze/Svg/Renderer/Pretty.p_o )
+[6 of 8] Compiling Text.Blaze.Svg.Internal ( src/Text/Blaze/Svg/Internal.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Text/Blaze/Svg/Internal.p_o )
+[7 of 8] Compiling Text.Blaze.Svg   ( src/Text/Blaze/Svg.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Text/Blaze/Svg.p_o )
+[8 of 8] Compiling Text.Blaze.Svg11 ( src/Text/Blaze/Svg11.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Text/Blaze/Svg11.p_o )
+
+src/Text/Blaze/Svg11.hs:97:1: warning: [-Wunused-imports]
+    The import of ‘.’ from module ‘Prelude’ is redundant
 Installing library in
 /Users/futurnur/.stack/snapshots/x86_64-osx/lts-8.2/8.0.2/lib/x86_64-osx-ghc-8.0.2/blaze-svg-0.3.6-71CwzrVsfpl669dSLxONba
 Registering blaze-svg-0.3.6...

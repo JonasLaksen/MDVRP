@@ -7,6 +7,12 @@ src/Control/Monad/Operational.hs:26:1: warning: [-Wunused-imports]
     The import of ‘Control.Applicative’ is redundant
       except perhaps to import instances from ‘Control.Applicative’
     To import instances alone, use: import Control.Applicative()
+[1 of 1] Compiling Control.Monad.Operational ( src/Control/Monad/Operational.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Monad/Operational.p_o )
+
+src/Control/Monad/Operational.hs:26:1: warning: [-Wunused-imports]
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
 Preprocessing executable 'operational-TicTacToe' for operational-0.2.3.5...
 [1 of 1] Compiling Main             ( doc/examples/TicTacToe.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/operational-TicTacToe/operational-TicTacToe-tmp/Main.o )
 Linking .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/operational-TicTacToe/operational-TicTacToe ...

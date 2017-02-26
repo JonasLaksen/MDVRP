@@ -9,6 +9,14 @@ Preprocessing library unix-compat-0.4.3.1...
 [6 of 8] Compiling System.PosixCompat.Files ( .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/PosixCompat/Files.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/PosixCompat/Files.o )
 [7 of 8] Compiling System.PosixCompat.Extensions ( .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/PosixCompat/Extensions.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/PosixCompat/Extensions.o )
 [8 of 8] Compiling System.PosixCompat ( src/System/PosixCompat.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/PosixCompat.o )
+[1 of 8] Compiling System.PosixCompat.User ( .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/PosixCompat/User.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/PosixCompat/User.p_o )
+[2 of 8] Compiling System.PosixCompat.Unistd ( src/System/PosixCompat/Unistd.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/PosixCompat/Unistd.p_o )
+[3 of 8] Compiling System.PosixCompat.Types ( src/System/PosixCompat/Types.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/PosixCompat/Types.p_o )
+[4 of 8] Compiling System.PosixCompat.Time ( src/System/PosixCompat/Time.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/PosixCompat/Time.p_o )
+[5 of 8] Compiling System.PosixCompat.Temp ( src/System/PosixCompat/Temp.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/PosixCompat/Temp.p_o )
+[6 of 8] Compiling System.PosixCompat.Files ( .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/PosixCompat/Files.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/PosixCompat/Files.p_o )
+[7 of 8] Compiling System.PosixCompat.Extensions ( .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/PosixCompat/Extensions.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/PosixCompat/Extensions.p_o )
+[8 of 8] Compiling System.PosixCompat ( src/System/PosixCompat.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/PosixCompat.p_o )
 Installing library in
 /Users/futurnur/.stack/snapshots/x86_64-osx/lts-8.2/8.0.2/lib/x86_64-osx-ghc-8.0.2/unix-compat-0.4.3.1-Ausmw6d7KIwA7sl52mzqxC
 Registering unix-compat-0.4.3.1...

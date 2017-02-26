@@ -32,7 +32,7 @@ main =  do
 --     initialPopulation <- evalRandIO $ mapM mutate $ take 100 $ repeat $ initPopulation m depot group
     let initialPopulation = take 100 $ repeat $ initPopulation m depot group
     putStrLn $ show $ prettySolution $ head initialPopulation
-    population <- run 1000 100 1000 m 0.9 4 depot initialPopulation
+    population <- run 1000 100 100 m 0.5 4 depot initialPopulation
     putStrLn $ show $ length population
 --     let lol = [1,2,3,4]
 --         swapped = swap 3 lol

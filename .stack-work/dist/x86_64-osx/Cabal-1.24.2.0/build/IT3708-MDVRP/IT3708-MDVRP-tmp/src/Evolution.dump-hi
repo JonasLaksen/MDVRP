@@ -1,13 +1,13 @@
 
 ==================== FINAL INTERFACE ====================
-2017-02-26 00:03:06.759762 UTC
+2017-02-26 13:15:56.209175 UTC
 
-interface main@main:Evolution 8002
-  interface hash: 0127abb5a01b60603859ad4959039b4e
-  ABI hash: 138c33996f2f5cf0a30692c8327ee093
-  export-list hash: 10dba61f2a15540df6659415010d3f19
-  orphan hash: 9d7a22590b5994b19290d540651ebac7
-  flag hash: 1d2122a9eeb2223310b2d1f91e6dd3a2
+interface main@main:Evolution [hpc] 8002
+  interface hash: 4a7ebd5dfa04aa141e26a337ffa91d96
+  ABI hash: 65e76d7ab79543b8605ac030d098d27a
+  export-list hash: f41c68e791cd9e7ca055d0f73df01f82
+  orphan hash: a9174926551e77c79ccc32e4a7361db4
+  flag hash: 875509f7f502afeef2e0160fba8f350f
   sig of: Nothing
   used TH splices: False
   where
@@ -40,8 +40,8 @@ family instance modules: MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3
                          base-4.9.1.0:GHC.TypeLits
                          primitive-0.6.1.0@primitive-0.6.1.0-6AbSTw9JXz141LE5p6LGH:Control.Monad.Primitive
 import  -/  MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.Monad.Random 1ac23f2f24d80161face0842d1be3259
-import  -/  MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.Monad.Random.Class 3fe5f573e27153f81a1671dc89c2a803
-import  -/  MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.Monad.Trans.Random.Lazy 326e5785e79a3ee38a8ed524d38bf2ea
+import  -/  MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.Monad.Random.Class ddfc9444af705abc1e10373a9b5f135f
+import  -/  MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.Monad.Trans.Random.Lazy 13c297237e86bbce4b876f8bb98abad8
 import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
 import  -/  base-4.9.1.0:Data.List 07ae2acca6538aa0800bd0a993ac6ac1
 import  -/  base-4.9.1.0:Data.OldList 27987919d8da2f92e3f472ca81f730f8
@@ -58,13 +58,13 @@ import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  Types 84d440671d91bc7127fd44e7871db9b3
   exports: 031c722d2eaf5c00cf8059beff2d5b0e
-import  -/  Utils 06f04f97451d00297320ca9df8fcfcb8
-  exports: b501bed28050ff51a87ada017e57bf5b
-import  -/  random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog:System.Random cc3ef358c669b194cf9fe94db6f2430f
-import  -/  random-shuffle-0.0.4@random-shuffle-0.0.4-97h14tPp7Ru21125sv6IMi:System.Random.Shuffle f4987cf345fa95642672b4cbf037c4b8
+import  -/  Utils 0a3968a4b35df5acb7686f2cf2f95ca7
+  exports: 91e228bb62228bf6da922e180065cfc8
+import  -/  random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog:System.Random c5caaf1a0bafbf70859f9c0e2c4519d7
+import  -/  random-shuffle-0.0.4@random-shuffle-0.0.4-97h14tPp7Ru21125sv6IMi:System.Random.Shuffle 52bd586585909e9c12974f69a94dc391
 import  -/  split-0.2.3.1@split-0.2.3.1-FWyXC6nhV0H3AfM8IzrEFk:Data.List.Split c60198a427bfd51d9fb4562c059ec1d2
-import  -/  split-0.2.3.1@split-0.2.3.1-FWyXC6nhV0H3AfM8IzrEFk:Data.List.Split.Internals 25dced234ed01c9c803d678763a4d772
-dbb1dce441713a7cbc9d57efb79b5001
+import  -/  split-0.2.3.1@split-0.2.3.1-FWyXC6nhV0H3AfM8IzrEFk:Data.List.Split.Internals 84cef3a4becd62b741fe379ec3b99783
+217b37c20b8be912b371251c5db77a6a
   $s$fApplicativeRandT ::
     GHC.Base.Applicative
       (Control.Monad.Trans.Random.Lazy.RandT
@@ -97,7 +97,7 @@ dbb1dce441713a7cbc9d57efb79b5001
   {- Strictness: m,
      Unfolding: InlineRule (0, True, True)
                 Data.Functor.Identity.$fFunctorIdentity -}
-654d5137f9a479a75775320658574df1
+3df5d501dc310fb33d78b459626c30f9
   $s$fApplicativeRandT_$s$fApplicativeRandT_$cp1Applicative ::
     GHC.Base.Functor
       (Control.Monad.Trans.Random.Lazy.RandT
@@ -105,12 +105,12 @@ dbb1dce441713a7cbc9d57efb79b5001
   {- Strictness: m,
      Unfolding: InlineRule (0, True, True)
                 Evolution.$s$fApplicativeRandT_$s$fFunctorRandT -}
-0d53958953873ef0da632e5ebf2af833
+9797c5abecafbd635ef6dfcd315049a4
   $s$fApplicativeRandT_$s$fFunctorRandT ::
     GHC.Base.Functor
       (Control.Monad.Trans.Random.Lazy.RandT
          g Data.Functor.Identity.Identity)
-  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
      Unfolding: DFun: @ g.
                   @ (Control.Monad.Trans.Random.Lazy.RandT
                        g Data.Functor.Identity.Identity)
@@ -122,7 +122,7 @@ dbb1dce441713a7cbc9d57efb79b5001
                      @ g
                      @ Data.Functor.Identity.Identity
                      Evolution.$s$fApplicativeRandT_$dFunctor) -}
-4aef7d6136b473863597300465e56302
+cfe738be884c2ffedfc7c9ee858f2528
   $s$fMonadRandT ::
     GHC.Base.Monad
       (Control.Monad.Trans.Random.Lazy.RandT
@@ -162,7 +162,7 @@ b63783787544e7159164eafff4ab2250
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-1836ec47625d583a7b56dfdf90901ef1
+0db56c86b73057f6a8fdedb3ee2ef665
   apply ::
     System.Random.RandomGen g =>
     GHC.Types.Int
@@ -175,14 +175,178 @@ b63783787544e7159164eafff4ab2250
     -> [a]
     -> Control.Monad.Trans.Random.Lazy.Rand g [a]
   {- Arity: 1, Strictness: <L,U(U,U,U)> -}
-67ed4a443ae9c950aa83159e5f777077
+45d040d64753b6fa9794b5ee560bceec
   select ::
     System.Random.RandomGen g =>
     GHC.Types.Int
     -> (a -> GHC.Types.Float)
     -> [a]
     -> Control.Monad.Trans.Random.Lazy.Rand g [a]
-  {- Arity: 4, Strictness: <L,U(U,U,U)><L,U(U)><L,C(U(U))><L,1*U> -}
+  {- Arity: 4, Strictness: <L,U(U,U,U)><L,U(U)><L,C(U(U))><L,1*U>,
+     Unfolding: (\ @ g
+                   @ a
+                   ($dRandomGen :: System.Random.RandomGen g)
+                   (n :: GHC.Types.Int)
+                   (fitnessF :: a -> GHC.Types.Float)
+                   (solutions :: [a]) ->
+                 let {
+                   sorted :: [a]
+                   = {__scc {main@main:Evolution.select} False True} {__scc {main@main:Evolution.select.sorted} True True} GHC.List.reverse1
+                                                                                                                             @ a
+                                                                                                                             (Data.OldList.sortBy
+                                                                                                                                @ a
+                                                                                                                                (\ (x :: a)
+                                                                                                                                   (y :: a)[OneShot] ->
+                                                                                                                                 case fitnessF
+                                                                                                                                        x of wild { GHC.Types.F# x1 ->
+                                                                                                                                 case fitnessF
+                                                                                                                                        y of wild1 { GHC.Types.F# y1 ->
+                                                                                                                                 case GHC.Prim.tagToEnum#
+                                                                                                                                        @ GHC.Types.Bool
+                                                                                                                                        (GHC.Prim.ltFloat#
+                                                                                                                                           x1
+                                                                                                                                           y1) of wild2 {
+                                                                                                                                   GHC.Types.False
+                                                                                                                                   -> case GHC.Prim.tagToEnum#
+                                                                                                                                             @ GHC.Types.Bool
+                                                                                                                                             (GHC.Prim.eqFloat#
+                                                                                                                                                x1
+                                                                                                                                                y1) of wild3 {
+                                                                                                                                        GHC.Types.False
+                                                                                                                                        -> GHC.Types.GT
+                                                                                                                                        GHC.Types.True
+                                                                                                                                        -> GHC.Types.EQ }
+                                                                                                                                   GHC.Types.True
+                                                                                                                                   -> GHC.Types.LT } } })
+                                                                                                                                solutions)
+                                                                                                                             (GHC.Types.[]
+                                                                                                                                @ a)
+                 } in
+                 let {
+                   lvl11 :: [GHC.Types.Int]
+                   = {__scc {main@main:Evolution.select} False True} {__scc {main@main:Evolution.select.zipped} False True} case GHC.List.$wlenAcc
+                                                                                                                                   @ a
+                                                                                                                                   sorted
+                                                                                                                                   0# of ww2 { DEFAULT ->
+                                                                                                                            GHC.Enum.eftInt
+                                                                                                                              1#
+                                                                                                                              ww2 }
+                 } in
+                 letrec {
+                   go :: [(a, (GHC.Types.Float, GHC.Types.Int))] -> [a]
+                     {- Arity: 1, Strictness: <S,1*U> -}
+                   = \ (ds :: [(a, (GHC.Types.Float, GHC.Types.Int))]) ->
+                     case ds of wild {
+                       [] -> GHC.Types.[] @ a
+                       : y ys
+                       -> case y of wild1 { (,) solution ds1 ->
+                          case ds1 of wild2 { (,) r i ->
+                          {__scc {main@main:Evolution.select.survived.\} True False} case r of wild3 { GHC.Types.F# x ->
+                                                                                     case i of wild4 { GHC.Types.I# i1 ->
+                                                                                     case {__scc {main@main:Evolution.select.survived.\} False True} GHC.List.$wlenAcc
+                                                                                                                                                       @ a
+                                                                                                                                                       sorted
+                                                                                                                                                       0# of ww2 { DEFAULT ->
+                                                                                     case {__scc {main@main:Evolution.select.survived.\} False True} GHC.Prim.divideFloat#
+                                                                                                                                                       (GHC.Prim.int2Float#
+                                                                                                                                                          i1)
+                                                                                                                                                       (GHC.Prim.int2Float#
+                                                                                                                                                          ww2) of wild5 { DEFAULT ->
+                                                                                     case {__scc {main@main:Evolution.select.survived.\} False True} GHC.Prim.tagToEnum#
+                                                                                                                                                       @ GHC.Types.Bool
+                                                                                                                                                       (GHC.Prim.leFloat#
+                                                                                                                                                          x
+                                                                                                                                                          (GHC.Prim.expFloat#
+                                                                                                                                                             (GHC.Prim.negateFloat#
+                                                                                                                                                                wild5))) of wild6 {
+                                                                                       GHC.Types.False
+                                                                                       -> go ys
+                                                                                       GHC.Types.True
+                                                                                       -> GHC.Types.:
+                                                                                            @ a
+                                                                                            solution
+                                                                                            (go
+                                                                                               ys) } } } } } } } }
+                 } in
+                 let {
+                   lvl12 :: GHC.Types.Bool
+                   = {__scc {main@main:Evolution.select} False True} {__scc {main@main:Evolution.select.selected} False True} case n of wild1 { GHC.Types.I# y ->
+                                                                                                                              GHC.Prim.tagToEnum#
+                                                                                                                                @ GHC.Types.Bool
+                                                                                                                                (GHC.Prim.<#
+                                                                                                                                   0#
+                                                                                                                                   y) }
+                 } in
+                 ({__scc {main@main:Evolution.select} True True} ({__scc {MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.Monad.Trans.Random.Lazy.>>=} True True} Control.Monad.Trans.State.Lazy.$fMonadStateT_$c>>=
+                                                                                                                                                                                       @ Data.Functor.Identity.Identity
+                                                                                                                                                                                       @ g
+                                                                                                                                                                                       Data.Functor.Identity.$fMonadIdentity)
+                                                                   @ [GHC.Types.Float]
+                                                                   @ [a]
+                                                                   (Control.Monad.Trans.Random.Lazy.$fMonadRandomRandT2
+                                                                      @ g
+                                                                      @ Data.Functor.Identity.Identity
+                                                                      $dRandomGen
+                                                                      Data.Functor.Identity.$fMonadIdentity
+                                                                      @ GHC.Types.Float
+                                                                      System.Random.$fRandomFloat
+                                                                      Evolution.select1)
+                                                                   (\ (rs :: [GHC.Types.Float]) ->
+                                                                    {__scc {MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.Monad.Trans.Random.Lazy.return} True False} GHC.Tuple.(,)
+                                                                                                                                                                                             @ [a]
+                                                                                                                                                                                             @ g
+                                                                                                                                                                                             (let {
+                                                                                                                                                                                                survived :: [a]
+                                                                                                                                                                                                = let {
+                                                                                                                                                                                                    zipped :: [(a,
+                                                                                                                                                                                                                (GHC.Types.Float,
+                                                                                                                                                                                                                 GHC.Types.Int))]
+                                                                                                                                                                                                    = {__scc {main@main:Evolution.select.zipped} True True} GHC.List.zip
+                                                                                                                                                                                                                                                              @ a
+                                                                                                                                                                                                                                                              @ (GHC.Types.Float,
+                                                                                                                                                                                                                                                                 GHC.Types.Int)
+                                                                                                                                                                                                                                                              sorted
+                                                                                                                                                                                                                                                              (GHC.List.zip
+                                                                                                                                                                                                                                                                 @ GHC.Types.Float
+                                                                                                                                                                                                                                                                 @ GHC.Types.Int
+                                                                                                                                                                                                                                                                 rs
+                                                                                                                                                                                                                                                                 lvl11)
+                                                                                                                                                                                                  } in
+                                                                                                                                                                                                  {__scc {main@main:Evolution.select.survived} True True} go
+                                                                                                                                                                                                                                                            zipped
+                                                                                                                                                                                              } in
+                                                                                                                                                                                              {__scc {main@main:Evolution.select.selected} True True} case lvl12 of wild {
+                                                                                                                                                                                                                                                        GHC.Types.False
+                                                                                                                                                                                                                                                        -> GHC.Types.[]
+                                                                                                                                                                                                                                                             @ a
+                                                                                                                                                                                                                                                        GHC.Types.True
+                                                                                                                                                                                                                                                        -> GHC.List.unsafeTake
+                                                                                                                                                                                                                                                             @ a
+                                                                                                                                                                                                                                                             n
+                                                                                                                                                                                                                                                             survived }))
+                                                                     `cast`
+                                                                   (<[GHC.Types.Float]>_R
+                                                                    ->_R Trans
+                                                                             (<g>_R
+                                                                              ->_R Sym (Data.Functor.Identity.N:Identity[0]
+                                                                                            <([a],
+                                                                                              g)>_R))
+                                                                             (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                                       <g>_N
+                                                                                       <Data.Functor.Identity.Identity>_R
+                                                                                       <[a]>_N))))
+                   `cast`
+                 (Sym (Control.Monad.Trans.Random.Lazy.N:RandT[0]) <g>_N <Data.Functor.Identity.Identity>_N <[a]>_N)) -}
+95ed13483ff39eb4460fa35f91c041cf
+  select1 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Evolution.select3, Evolution.select2)) -}
+1feba6e43e6e451f7c710a6224bb1756
+  select2 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 1.0#) -}
+5f876c45ab622f2257dc30b650c9f764
+  select3 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.0#) -}
 "SPEC/Evolution $fApplicativeRandT _ @ Identity" [ALWAYS] forall @ g
                                                                  ($dMonad :: GHC.Base.Monad
                                                                                Data.Functor.Identity.Identity)

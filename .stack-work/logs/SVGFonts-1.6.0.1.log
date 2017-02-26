@@ -9,6 +9,14 @@ Preprocessing library SVGFonts-1.6.0.1...
 [6 of 8] Compiling Graphics.SVGFonts.WriteFont ( src/Graphics/SVGFonts/WriteFont.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/SVGFonts/WriteFont.o )
 [7 of 8] Compiling Graphics.SVGFonts.Text ( src/Graphics/SVGFonts/Text.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/SVGFonts/Text.o )
 [8 of 8] Compiling Graphics.SVGFonts ( src/Graphics/SVGFonts.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/SVGFonts.o )
+[1 of 8] Compiling Paths_SVGFonts   ( .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/autogen/Paths_SVGFonts.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Paths_SVGFonts.p_o )
+[2 of 8] Compiling Graphics.SVGFonts.ReadPath ( src/Graphics/SVGFonts/ReadPath.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/SVGFonts/ReadPath.p_o )
+[3 of 8] Compiling Graphics.SVGFonts.CharReference ( src/Graphics/SVGFonts/CharReference.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/SVGFonts/CharReference.p_o )
+[4 of 8] Compiling Graphics.SVGFonts.ReadFont ( src/Graphics/SVGFonts/ReadFont.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/SVGFonts/ReadFont.p_o )
+[5 of 8] Compiling Graphics.SVGFonts.Fonts ( src/Graphics/SVGFonts/Fonts.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/SVGFonts/Fonts.p_o )
+[6 of 8] Compiling Graphics.SVGFonts.WriteFont ( src/Graphics/SVGFonts/WriteFont.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/SVGFonts/WriteFont.p_o )
+[7 of 8] Compiling Graphics.SVGFonts.Text ( src/Graphics/SVGFonts/Text.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/SVGFonts/Text.p_o )
+[8 of 8] Compiling Graphics.SVGFonts ( src/Graphics/SVGFonts.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/SVGFonts.p_o )
 Installing library in
 /Users/futurnur/HaskellProjects/IT3708-MDVRP/.stack-work/install/x86_64-osx/lts-8.2/8.0.2/lib/x86_64-osx-ghc-8.0.2/SVGFonts-1.6.0.1-4O7BdqgcaRegDGb08VpP3
 Registering SVGFonts-1.6.0.1...

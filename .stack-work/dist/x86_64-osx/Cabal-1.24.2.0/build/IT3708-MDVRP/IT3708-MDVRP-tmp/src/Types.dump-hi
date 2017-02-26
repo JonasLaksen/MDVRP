@@ -1,13 +1,13 @@
 
 ==================== FINAL INTERFACE ====================
-2017-02-24 12:30:41.295465 UTC
+2017-02-26 13:15:54.798929 UTC
 
-interface main@main:Types 8002
-  interface hash: dce35adefae428d4f8f5507ed0ebe9ae
+interface main@main:Types [hpc] 8002
+  interface hash: 3d4774f33285b0ec587b43f4c1b93716
   ABI hash: 84d440671d91bc7127fd44e7871db9b3
   export-list hash: 031c722d2eaf5c00cf8059beff2d5b0e
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
-  flag hash: 1d2122a9eeb2223310b2d1f91e6dd3a2
+  flag hash: 875509f7f502afeef2e0160fba8f350f
   sig of: Nothing
   used TH splices: False
   where
