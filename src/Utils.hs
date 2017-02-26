@@ -45,3 +45,16 @@ swapElementsAt i j ls = [get k x | (k, x) <- zip [0..length ls - 1] ls]
     where get k x | k == i = ls !! j
                   | k == j = ls !! i
                   | otherwise = x
+
+routeCycle :: Depot -> [Customer] -> [Point]
+routeCycle depot customers = map position $ snd depot:customers ++ [snd depot]
+
+routeDistance :: Depot -> [Customer] -> Float
+routeDistance depot = totalDistance . routeCycle depot
+
+replace :: Eq a => a -> a -> [a] -> [a]
+replace _ _ [] = []
+replace a b (x:xs) = if x == a then b:replace a b xs else x:replace a b xs
+
+boolToInt :: Bool -> Int
+boolToInt b = if b then 1 else 0

@@ -65,17 +65,9 @@ mutate routes =
             swapped = foldr (\(route, (r1, r2)) acc -> if r1 `mod` 1 == 0 then swapElementsAt (r1 `mod` length route) (r2 `mod` length route) route:acc else route:acc) [] $ zip mutated $ zip ss rr
         return swapped
 
-routeCycle :: Depot -> [Customer] -> [Point]
-routeCycle depot customers = map position $ snd depot:customers ++ [snd depot]
-
-routeDistance :: Depot -> [Customer] -> Float
-routeDistance depot = totalDistance . routeCycle depot
-
 coverDemands :: Depot -> [Customer] -> Bool
 coverDemands ((_,maxLoad),_) customers =
     maxLoad >= sum ( map (\(_:_:_:_:demand:_) -> demand) customers)
 
-boolToInt :: Bool -> Int
-boolToInt b = if b then 1 else 0
 
 

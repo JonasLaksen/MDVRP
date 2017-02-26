@@ -1,13 +1,13 @@
 
 ==================== FINAL INTERFACE ====================
-2017-02-26 13:15:55.883372 UTC
+2017-02-26 14:33:25.972505 UTC
 
-interface main@main:Grouping [hpc] 8002
-  interface hash: 6cb7e544806f4ed9daedc9395d1388c9
-  ABI hash: 0594a9fb538132c80f82570429d158b1
+interface main@main:Grouping 8002
+  interface hash: 878399e5ce56642d1ffa2bdc9da5e813
+  ABI hash: c7ff63e20e394437cbf56237a13e87ee
   export-list hash: 20a2b046f550cb7f74e729d1f0cddb41
   orphan hash: da64de1a3b6533aef8e208b6ffb15191
-  flag hash: 875509f7f502afeef2e0160fba8f350f
+  flag hash: 1d2122a9eeb2223310b2d1f91e6dd3a2
   sig of: Nothing
   used TH splices: False
   where
@@ -37,15 +37,15 @@ import  -/  base-4.9.1.0:Data.Tuple 7dc4bbb45d2e69c991ffac438beeca11
 import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
 import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map 0fd5c8559af8bc4b6f38b9cf9ba5a467
-import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base 6f24f704e82acc068dec9aa0e4966b98
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base 8b155a212edaca6c85bcefe65a8bc505
 import  -/  Types 84d440671d91bc7127fd44e7871db9b3
   exports: 031c722d2eaf5c00cf8059beff2d5b0e
   Customer f75d8487e3b128e128ef94d19db2ae50
   Depot 2dba77e5376bdc0022480a68274372fe
-import  -/  Utils 0a3968a4b35df5acb7686f2cf2f95ca7
-  exports: 91e228bb62228bf6da922e180065cfc8
-  distance 3d4f30891018d3ebd08da90c0299a216
-  position e0d6857d66be1fdb82013b42479cd2b8
+import  -/  Utils c7969a16242b70abf7faf20be0ad81eb
+  exports: a40b5a2023a5e971678c083e46120cd0
+  distance a28fa076170498cd4f9a77cfa84bae36
+  position 3a68b41abe4a6c1382463521dfb9f3c8
 0dc9ae8189fd134c59aa4e0c249b693a
   $sfromListWith_$sfromListWithKey ::
     (Types.Depot -> a -> a -> a)
@@ -94,47 +94,40 @@ d16f2a355eafa6ddc81426cd84d29e5b
   {- Arity: 5,
      Strictness: <L,1*C1(C1(C1(U)))><L,U(U(U),U(U))><L,U><L,U><S,1*U>,
      Inline: [0] -}
-21525c8727b470889b26fd0f80c99440
+af92bfbee821f47f88fba51c0022c719
   grouping ::
     [Types.Depot]
     -> [Types.Customer]
     -> Data.Map.Base.Map Types.Depot [Types.Customer]
   {- Arity: 2, Strictness: <L,U><S,1*U>,
      Unfolding: (\ (d :: [Types.Depot]) (c :: [Types.Customer]) ->
-                 {__scc {main@main:Grouping.grouping} True True} Grouping.$sfromListWith_$sfromListWithKey
-                                                                   @ [Types.Customer]
-                                                                   Grouping.grouping3
-                                                                   (GHC.Base.map
-                                                                      @ (Types.Depot,
-                                                                         Types.Customer)
-                                                                      @ (Types.Depot,
-                                                                         [Types.Customer])
-                                                                      Grouping.grouping1
-                                                                      (Grouping.grouping' d c))) -}
+                 Grouping.$sfromListWith_$sfromListWithKey
+                   @ [Types.Customer]
+                   Grouping.grouping2
+                   (GHC.Base.map
+                      @ (Types.Depot, Types.Customer)
+                      @ (Types.Depot, [Types.Customer])
+                      Grouping.grouping1
+                      (Grouping.grouping' d c))) -}
 9973a2aaf636286b550949f2244c3062
   grouping' ::
     [Types.Depot]
     -> [Types.Customer] -> [(Types.Depot, Types.Customer)]
   {- Arity: 2, Strictness: <L,U><S,1*U> -}
-7007534dea1398fcc2e0b8ba9fe7a9b6
+44a6958bf37d71eed3574121735abc30
   grouping1 ::
-    (Types.Depot, Types.Customer) -> (Types.Depot, [Types.Customer])
-  {- Unfolding: ({__scc {main@main:Grouping.grouping} False True} Grouping.grouping2) -}
-dc9d82e47112557a64533e77092e1084
-  grouping2 ::
     (Types.Depot, Types.Customer) -> (Types.Depot, [Types.Customer])
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(U,U)>m,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: (Types.Depot, Types.Customer)) ->
                  case ds of wild { (,) a b ->
-                 {__scc {main@main:Grouping.grouping.\} True False} (a,
-                                                                     GHC.Types.:
-                                                                       @ Types.Customer
-                                                                       b
-                                                                       (GHC.Types.[]
-                                                                          @ Types.Customer)) }) -}
-952fb70a491ef6ca19b8e32a3107a607
-  grouping3 ::
+                 (a,
+                  GHC.Types.:
+                    @ Types.Customer
+                    b
+                    (GHC.Types.[] @ Types.Customer)) }) -}
+93488f4df717ab2454d9ca031ec5e0eb
+  grouping2 ::
     Types.Depot
     -> [Types.Customer] -> [Types.Customer] -> [[GHC.Types.Int]]
   {- Arity: 3, HasNoCafRefs,

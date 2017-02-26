@@ -31,5 +31,3 @@ select n fitnessF solutions =
             survived = map fst $ filter (\(solution, (r, i)) -> (r::Float) <= (exp $ negate (fromIntegral i / (fromIntegral $ length sorted)))) zipped
             selected = take n survived
         return selected
-
-

@@ -1,0 +1,291 @@
+
+==================== FINAL INTERFACE ====================
+2017-02-26 15:37:56.843088 UTC
+
+interface main@main:Scheduling 8002
+  interface hash: 4cb117fe8dd58a638693d002bd22a582
+  ABI hash: 9520fda3de293f0ca77a01c4d57a7e53
+  export-list hash: ff6bae359eaecdacded84c047c0fdf97
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 1d2122a9eeb2223310b2d1f91e6dd3a2
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Scheduling.crossover
+  Scheduling.fitness
+  Scheduling.mutate
+  Scheduling.normalize
+module dependencies: Types Utils
+package dependencies: MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1 mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
+                      primitive-0.6.1.0@primitive-0.6.1.0-6AbSTw9JXz141LE5p6LGH
+                      random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+family instance modules: MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.Monad.Trans.Random.Lazy
+                         base-4.9.1.0:Control.Applicative base-4.9.1.0:Data.Complex
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Functor.Identity base-4.9.1.0:Data.List.NonEmpty
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Semigroup
+                         base-4.9.1.0:Data.Type.Equality base-4.9.1.0:Data.Version
+                         base-4.9.1.0:Data.Void base-4.9.1.0:GHC.Exts
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+                         primitive-0.6.1.0@primitive-0.6.1.0-6AbSTw9JXz141LE5p6LGH:Control.Monad.Primitive
+import  -/  MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.Monad.Random 1ac23f2f24d80161face0842d1be3259
+import  -/  MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.Monad.Random.Class 3fe5f573e27153f81a1671dc89c2a803
+import  -/  MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.Monad.Trans.Random.Lazy 326e5785e79a3ee38a8ed524d38bf2ea
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
+import  -/  base-4.9.1.0:Data.List 07ae2acca6538aa0800bd0a993ac6ac1
+import  -/  base-4.9.1.0:Data.OldList 27987919d8da2f92e3f472ca81f730f8
+import  -/  base-4.9.1.0:Data.Tuple 7dc4bbb45d2e69c991ffac438beeca11
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Real 82e4e59051a13dba1da63e1e970a69e6
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  Types 84d440671d91bc7127fd44e7871db9b3
+  exports: 031c722d2eaf5c00cf8059beff2d5b0e
+  Depot 2dba77e5376bdc0022480a68274372fe
+  Route 1575af41b020866d7a49276c2048a2ed
+import  -/  Utils c7969a16242b70abf7faf20be0ad81eb
+  exports: a40b5a2023a5e971678c083e46120cd0
+  routeDistance dcd70eb0656824b9d0965208d2cf332c
+  swapElementsAt bf81392f6beca91d22792729394e8b17
+import  -/  random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog:System.Random cc3ef358c669b194cf9fe94db6f2430f
+2e880f7d99278132557c8584855a32ab
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Scheduling.$trModule2
+                   Scheduling.$trModule1) -}
+a5b8c952039b252ebf7cc9a7635b4258
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Scheduling"#) -}
+3be15e615befb2f34b11c40c100e077e
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+23cdaa5368f04e79eede68e4d3a86206
+  $wunsafeDrop :: GHC.Prim.Int# -> [a1] -> [a1]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U><S,1*U>,
+     Inline: [0] -}
+4ee75b14e35359d22e20556a755cd8fe
+  crossover ::
+    System.Random.RandomGen g =>
+    Types.Route
+    -> Types.Route
+    -> Control.Monad.Trans.Random.Lazy.Rand g [Types.Route]
+  {- Arity: 3,
+     Strictness: <L,U(C(U(1*U(U),U)),C(U(U,U)),1*U)><S,1*U><L,U> -}
+f4f4d936b878bd35d997a3e3777bbb70
+  fitness :: Types.Depot -> Types.Route -> GHC.Types.Float
+  {- Arity: 2, Strictness: <L,U(A,U)><L,1*U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (depot :: Types.Depot) (route :: Types.Route) ->
+                 case Utils.routeDistance depot route of wild1 { GHC.Types.F# y ->
+                 case GHC.Prim.divideFloat# 1.0# y of wild2 { DEFAULT ->
+                 GHC.Types.F# wild2 } }) -}
+c7c2925611ce3f4922185e40b2e38ef7
+  mutate ::
+    System.Random.RandomGen g =>
+    Types.Route -> Control.Monad.Trans.Random.Lazy.Rand g Types.Route
+  {- Arity: 2, Strictness: <L,U(C(U(1*U(U),U)),C(U(U,U)),U)><L,U>,
+     Unfolding: (\ @ g
+                   ($dRandomGen :: System.Random.RandomGen g)
+                   (route :: Types.Route) ->
+                 let {
+                   lvl2 :: GHC.Types.Int
+                   = case GHC.List.$wlenAcc
+                            @ [GHC.Types.Int]
+                            route
+                            0# of ww2 { DEFAULT ->
+                     GHC.Types.I# ww2 }
+                 } in
+                 let {
+                   g1 :: g -> (g, g) = System.Random.split @ g $dRandomGen
+                 } in
+                 letrec {
+                   go :: g -> [GHC.Types.Int] {- Arity: 1, Strictness: <L,U> -}
+                   = \ (g2 :: g) ->
+                     case System.Random.$wrandomIvalInteger
+                            @ g
+                            @ GHC.Types.Int
+                            $dRandomGen
+                            GHC.Num.$fNumInt
+                            System.Random.$fRandomCIntMax4
+                            System.Random.$fRandomCIntMax3
+                            g2 of ww { (#,#) ww1 ww2 ->
+                     case ww1 of x1 { GHC.Types.I# ipv ->
+                     GHC.Types.: @ GHC.Types.Int x1 (go ww2) } }
+                 } in
+                 letrec {
+                   go1 :: g -> [GHC.Types.Int] {- Arity: 1, Strictness: <L,U> -}
+                   = \ (g2 :: g) ->
+                     case System.Random.$wrandomIvalInteger
+                            @ g
+                            @ GHC.Types.Int
+                            $dRandomGen
+                            GHC.Num.$fNumInt
+                            System.Random.$fRandomCIntMax4
+                            System.Random.$fRandomCIntMax3
+                            g2 of ww { (#,#) ww1 ww2 ->
+                     case ww1 of x1 { GHC.Types.I# ipv ->
+                     GHC.Types.: @ GHC.Types.Int x1 (go1 ww2) } }
+                 } in
+                 (\ (eta2 :: g) ->
+                  let {
+                    ds :: (g, g) = g1 eta2
+                  } in
+                  case go1 (case ds of wild { (,) x y -> x }) of wild {
+                    [] -> Scheduling.mutate3 @ g
+                    : s ds1
+                    -> let {
+                         ds2 :: (g, g) = g1 (case ds of wild1 { (,) x y -> y })
+                       } in
+                       case go (case ds2 of wild1 { (,) x y -> x }) of wild1 {
+                         [] -> Scheduling.mutate2 @ g
+                         : t ds3
+                         -> (Utils.swapElementsAt
+                               @ Types.Customer
+                               (case lvl2 of ww { GHC.Types.I# ww1 ->
+                                case ww1 of wild2 {
+                                  DEFAULT
+                                  -> case s of wild3 { GHC.Types.I# x ->
+                                     case GHC.Classes.modInt# x wild2 of ww2 { DEFAULT ->
+                                     GHC.Types.I# ww2 } }
+                                  -1# -> Scheduling.mutate1
+                                  0# -> case GHC.Real.divZeroError ret_ty GHC.Types.Int of {} } })
+                               (case lvl2 of ww { GHC.Types.I# ww1 ->
+                                case ww1 of wild2 {
+                                  DEFAULT
+                                  -> case t of wild3 { GHC.Types.I# x ->
+                                     case GHC.Classes.modInt# x wild2 of ww2 { DEFAULT ->
+                                     GHC.Types.I# ww2 } }
+                                  -1# -> Scheduling.mutate1
+                                  0# -> case GHC.Real.divZeroError ret_ty GHC.Types.Int of {} } })
+                               route,
+                             case ds2 of wild2 { (,) x y -> y })
+                              `cast`
+                            (Sym (Data.Functor.Identity.N:Identity[0]
+                                      <([Types.Customer], g)>_R)) } })
+                   `cast`
+                 (Trans
+                      (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                <g>_N <Data.Functor.Identity.Identity>_R <Types.Route>_N))
+                      (Sym (Control.Monad.Trans.Random.Lazy.N:RandT[0]) <g>_N <Data.Functor.Identity.Identity>_N <Types.Route>_N))) -}
+0c9eb38f604291e81255c07a9772b4ac
+  mutate1 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 0#) -}
+059dfacba4005467a1dcb67e84053312
+  mutate2 :: Data.Functor.Identity.Identity (Types.Route, g)
+  {- Strictness: x -}
+4137caaa5a4bf179ab175149ddc114a0
+  mutate3 :: Data.Functor.Identity.Identity (Types.Route, g)
+  {- Strictness: x -}
+54f6a8dd1344e0b62fd1804aee38cf76
+  normalize :: Types.Route -> Types.Route -> Types.Route
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: (\ (all :: Types.Route) (route :: Types.Route) ->
+                 letrec {
+                   $wgo :: [(Types.Customer, GHC.Integer.Type.Integer)]
+                           -> (# [Types.Customer], [Types.Customer] #)
+                     {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+                   = \ (w :: [(Types.Customer, GHC.Integer.Type.Integer)]) ->
+                     case w of wild {
+                       [] -> (# all, GHC.Types.[] @ Types.Customer #)
+                       : y ys
+                       -> case y of wild1 { (,) c count ->
+                          case $wgo ys of ww { (#,#) ww1 ww2 ->
+                          case GHC.Integer.Type.eqInteger#
+                                 count
+                                 Scheduling.normalize3 of wild2 { DEFAULT ->
+                          case GHC.Prim.tagToEnum# @ GHC.Types.Bool wild2 of wild3 {
+                            GHC.Types.False
+                            -> (# Scheduling.$wunsafeDrop @ Types.Customer 1# ww1,
+                                  GHC.Types.:
+                                    @ Types.Customer
+                                    (GHC.List.head @ Types.Customer ww1)
+                                    ww2 #)
+                            GHC.Types.True
+                            -> (# ww1, GHC.Types.: @ Types.Customer c ww2 #) } } } } }
+                 } in
+                 letrec {
+                   go :: [GHC.Types.Int]
+                         -> [[GHC.Types.Int]]
+                         -> [(Types.Customer, GHC.Integer.Type.Integer)]
+                     {- Arity: 2, Strictness: <S,1*U><L,1*U> -}
+                   = \ (ds :: [GHC.Types.Int]) (_ys :: [[GHC.Types.Int]]) ->
+                     case ds of wild {
+                       [] -> GHC.Types.[] @ (Types.Customer, GHC.Integer.Type.Integer)
+                       : ipv ipv1
+                       -> case _ys of wild1 {
+                            [] -> GHC.Types.[] @ (Types.Customer, GHC.Integer.Type.Integer)
+                            : ipv2 ipv3
+                            -> case ipv of wild2 { GHC.Types.I# y ->
+                               case GHC.Prim.tagToEnum#
+                                      @ GHC.Types.Bool
+                                      (GHC.Prim.<# 0# y) of wild3 {
+                                 GHC.Types.False
+                                 -> case GHC.List.elem
+                                           @ Types.Customer
+                                           GHC.Classes.$fEq[]_$s$fEq[]
+                                           ipv2
+                                           (GHC.Types.[] @ [GHC.Types.Int]) of wild4 {
+                                      GHC.Types.False
+                                      -> GHC.Types.:
+                                           @ (Types.Customer, GHC.Integer.Type.Integer)
+                                           (ipv2, Scheduling.normalize3)
+                                           (go ipv1 ipv3)
+                                      GHC.Types.True
+                                      -> GHC.Types.:
+                                           @ (Types.Customer, GHC.Integer.Type.Integer)
+                                           (ipv2, Scheduling.normalize2)
+                                           (go ipv1 ipv3) }
+                                 GHC.Types.True
+                                 -> case GHC.List.elem
+                                           @ Types.Customer
+                                           GHC.Classes.$fEq[]_$s$fEq[]
+                                           ipv2
+                                           (GHC.List.$wunsafeTake
+                                              @ [GHC.Types.Int]
+                                              y
+                                              route) of wild4 {
+                                      GHC.Types.False
+                                      -> GHC.Types.:
+                                           @ (Types.Customer, GHC.Integer.Type.Integer)
+                                           (ipv2, Scheduling.normalize3)
+                                           (go ipv1 ipv3)
+                                      GHC.Types.True
+                                      -> GHC.Types.:
+                                           @ (Types.Customer, GHC.Integer.Type.Integer)
+                                           (ipv2, Scheduling.normalize2)
+                                           (go ipv1 ipv3) } } } } }
+                 } in
+                 case $wgo (go Scheduling.normalize1 route) of ww { (#,#) ww1 ww2 ->
+                 ww2 }) -}
+4d374eb419139fd6d2477741d85f42ed
+  normalize1 :: [GHC.Types.Int]
+  {- Unfolding: (GHC.Enum.eftInt 0# 9223372036854775807#) -}
+f2ae1dcc4aac9352a23da7c4441f7e4b
+  normalize2 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (2) -}
+6795ad8258e726eb5dc1281ffcf81009
+  normalize3 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (1) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
