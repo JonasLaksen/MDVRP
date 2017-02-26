@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-02-24 12:30:41.607104 UTC
+2017-02-26 00:03:05.305374 UTC
 
 interface main@main:Utils 8002
-  interface hash: 18db4e496634a1e234d5879e83c50384
-  ABI hash: 094242648892b9075bb200bf6de38af4
-  export-list hash: e6e25c60e3b9213258a6dd3fc7c7bb38
+  interface hash: 92d15562e31fdd5a575337e2f472dc2b
+  ABI hash: 06f04f97451d00297320ca9df8fcfcb8
+  export-list hash: b501bed28050ff51a87ada017e57bf5b
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1d2122a9eeb2223310b2d1f91e6dd3a2
   sig of: Nothing
@@ -20,6 +20,7 @@ exports:
   Utils.prettyRoute
   Utils.prettySolution
   Utils.shrink
+  Utils.swap
   Utils.totalDistance
 module dependencies: Types
 package dependencies: base-4.9.1.0 ghc-prim-0.5.0.0
@@ -148,6 +149,9 @@ a14d48367d28cf9e3b9840a399d19135
                 (\ @ a (x :: [a]) ->
                  case GHC.List.$wlenAcc @ a x 0# of ww2 { DEFAULT ->
                  GHC.Prim.tagToEnum# @ GHC.Types.Bool (GHC.Prim.># ww2 0#) }) -}
+f6795b63defe4e7f697cfdc09ca68749
+  swap :: GHC.Types.Int -> [a] -> [a]
+  {- Arity: 2, Strictness: <L,1*U(1*U)><S,1*U> -}
 0ee0dc98a6c8019271a23f54b1792f3c
   totalDistance :: [Types.Point] -> GHC.Types.Float
   {- Arity: 1, Strictness: <S,1*U>,

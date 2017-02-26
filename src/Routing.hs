@@ -54,13 +54,15 @@ mutate routes =
         customers <-  shuffleM $ concat routes
         (r:rs) <- getRandoms
         (i:is) <- getRandoms
+        ss <- getRandoms
         let
             chosenCustomers = take (length routes) customers
             shrimpedRoutes = shrink $ map (\route -> filter (\x -> notElem x chosenCustomers) route) routes
             shouldExpand = r `mod` (length shrimpedRoutes) >= div (length shrimpedRoutes) 2
             expandedRoutes = if shouldExpand then shrimpedRoutes ++ [[]] else shrimpedRoutes
             mutated = foldr (\(customer,r) acc -> insertInto customer (i `mod` (length $ concat acc )) acc ) expandedRoutes $ zip chosenCustomers rs
-        return mutated
+            swapped = foldr (\(r,route) acc -> swap (r `mod` length route) route:acc ) [] $ zip ss mutated
+        return swapped
 
 routeCycle :: Depot -> [Customer] -> [Point]
 routeCycle depot customers = map position $ snd depot:customers ++ [snd depot]

@@ -35,3 +35,8 @@ insertInto' a i (x:xs) = x : insertInto' a (i-1) xs
 
 shrink :: [[a]] -> [[a]]
 shrink = filter (\x -> length x > 0)
+
+swap :: Int -> [a] -> [a]
+swap _ []  = []
+swap 0 (x:y:ys) = (y:x:ys)
+swap i (x:xs) = x : swap (i-1) xs
