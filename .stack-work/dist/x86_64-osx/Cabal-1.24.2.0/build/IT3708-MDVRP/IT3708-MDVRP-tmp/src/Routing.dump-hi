@@ -1,18 +1,17 @@
 
 ==================== FINAL INTERFACE ====================
-2017-02-26 14:33:27.385124 UTC
+2017-02-28 12:23:30.034288 UTC
 
 interface main@main:Routing 8002
-  interface hash: f21708c2df26d66144e5f9d6e614606c
-  ABI hash: 11e002ff4ee784a0d2ef45bd7a17af9e
-  export-list hash: eef4be4064c288f3aac3a97cf5d6a0e5
+  interface hash: 76d1cb4bf900f30fe2ecab2325ee0462
+  ABI hash: ef38d2023695924e8988b5b9c606e405
+  export-list hash: 5fc9b13a4bbfdd992e135cf154eefe88
   orphan hash: 47ae25d08d48a880b3b8ad93bc190632
   flag hash: 1d2122a9eeb2223310b2d1f91e6dd3a2
   sig of: Nothing
   used TH splices: False
   where
 exports:
-  Routing.boolToInt
   Routing.coverDemands
   Routing.crossover
   Routing.delete
@@ -22,7 +21,7 @@ exports:
   Routing.mostSimilar
   Routing.mostSimilar'
   Routing.mutate
-module dependencies: Evolution Types Utils
+module dependencies: Evolution Scheduling Types Utils
 package dependencies: MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH
                       array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
                       deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
@@ -54,6 +53,7 @@ import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
 import  -/  base-4.9.1.0:Data.List 07ae2acca6538aa0800bd0a993ac6ac1
 import  -/  base-4.9.1.0:Data.OldList 27987919d8da2f92e3f472ca81f730f8
 import  -/  base-4.9.1.0:Data.Ord 7fde5c9d64d4c27431689be19182758a
+import  -/  base-4.9.1.0:Data.Traversable 556020d7cf3c4a34a774600512918a37
 import  -/  base-4.9.1.0:Debug.Trace a9edf3aec504f4423d8ba829ab373a25
 import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
 import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
@@ -61,19 +61,27 @@ import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
 import  -/  base-4.9.1.0:GHC.Real 82e4e59051a13dba1da63e1e970a69e6
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
-import  -/  Evolution 138c33996f2f5cf0a30692c8327ee093
+import  -/  Evolution 0ee1623eb55630f5b9659d325c207326
   exports: 10dba61f2a15540df6659415010d3f19
+  apply 7649695f42bb39de4c6bcc4979f1b9e6
+import  -/  Scheduling 7af8ec8dbb0bd381b6ad413b6f98217f
+  exports: c63b7f7791b0048c3b8a0007ef79609d
+  crossover 4ee75b14e35359d22e20556a755cd8fe
+  fitness 266f8707351473290aadbeb844df7451
+  fitness' 6f965f9d04a6e97940328e9903914648
+  mutate f5d9eb7ba5bc484aa3b9aae7b52d4146
 import  -/  Types 84d440671d91bc7127fd44e7871db9b3
   exports: 031c722d2eaf5c00cf8059beff2d5b0e
   Customer f75d8487e3b128e128ef94d19db2ae50
   Depot 2dba77e5376bdc0022480a68274372fe
   Route 1575af41b020866d7a49276c2048a2ed
-import  -/  Utils c7969a16242b70abf7faf20be0ad81eb
-  exports: a40b5a2023a5e971678c083e46120cd0
-  insertInto 60cd49ced65904c6638f8b1311317d83
+import  -/  Utils 217a5add3868c286a5e6b41d101f8178
+  exports: 9ee9c5ee12a628beb47394d23bfdd83e
+  boolToInt 793226d97cf29f69389d11ee4aa47ca8
+  insertInto 250eaf25fa608c91c6f982518c65dfc6
+  nestedSwap 94bed73ffe11e104153b0e75a8284be6
   routeDistance dcd70eb0656824b9d0965208d2cf332c
   shrink 3c0a77c22b1e38e853f646c700901a6c
-  swapElementsAt bf81392f6beca91d22792729394e8b17
 import  -/  random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog:System.Random cc3ef358c669b194cf9fe94db6f2430f
 import  -/  random-shuffle-0.0.4@random-shuffle-0.0.4-97h14tPp7Ru21125sv6IMi:System.Random.Shuffle f4987cf345fa95642672b4cbf037c4b8
 import  -/  split-0.2.3.1@split-0.2.3.1-FWyXC6nhV0H3AfM8IzrEFk:Data.List.Split c60198a427bfd51d9fb4562c059ec1d2
@@ -120,58 +128,6 @@ f007a4198937d633cd2ca3a9b76b821a
      Unfolding: (\ (ww :: GHC.Prim.Int#) (w :: [Types.Customer]) ->
                  case Routing.$wgo w 0# of ww1 { DEFAULT ->
                  GHC.Prim.tagToEnum# @ GHC.Types.Bool (GHC.Prim.>=# ww ww1) }) -}
-24c319443440274265f7250c94a5426d
-  $wfitness ::
-    GHC.Prim.Int# -> Types.Depot -> [Types.Route] -> GHC.Prim.Float#
-  {- Arity: 3, Strictness: <S,U><L,U(U(A,U(U)),U)><S,U>, Inline: [0],
-     Unfolding: (\ (ww :: GHC.Prim.Int#)
-                   (w :: Types.Depot)
-                   (w1 :: [Types.Route]) ->
-                 case GHC.List.$wlenAcc @ [Types.Customer] w1 0# of ww2 { DEFAULT ->
-                 let {
-                   $w$j :: GHC.Prim.Int# -> GHC.Prim.Float#
-                     {- Arity: 1, Strictness: <S,U>, Inline: [0] -}
-                   = \ (w2 :: GHC.Prim.Int#)[OneShot] ->
-                     letrec {
-                       $wgo4 :: [[Types.Customer]] -> GHC.Prim.Float#
-                         {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
-                       = \ (w3 :: [[Types.Customer]]) ->
-                         case w3 of wild {
-                           [] -> 1.0#
-                           : y ys
-                           -> case w of ww1 { (,) ww3 ww4 ->
-                              case ww3 of ww5 { (,) ww6 ww7 ->
-                              case ww7 of ww8 { GHC.Types.I# ww9 ->
-                              case Routing.$wgo y 0# of ww10 { DEFAULT ->
-                              case GHC.Prim.tagToEnum#
-                                     @ GHC.Types.Bool
-                                     (GHC.Prim.>=# ww9 ww10) of wild1 {
-                                GHC.Types.False
-                                -> case $wgo4 ys of ww11 { DEFAULT ->
-                                   GHC.Prim.timesFloat# 0.1# ww11 }
-                                GHC.Types.True -> $wgo4 ys } } } } } }
-                     } in
-                     case $wgo4 w1 of ww1 { DEFAULT ->
-                     letrec {
-                       $wgo5 :: [[Types.Customer]] -> GHC.Prim.Float# -> GHC.Prim.Float#
-                         {- Arity: 2, Strictness: <S,1*U><L,U>, Inline: [0] -}
-                       = \ (w3 :: [[Types.Customer]]) (ww3 :: GHC.Prim.Float#) ->
-                         case w3 of wild {
-                           [] -> ww3
-                           : y ys
-                           -> case Utils.routeDistance w y of wild1 { GHC.Types.F# y1 ->
-                              $wgo5 ys (GHC.Prim.plusFloat# ww3 y1) } }
-                     } in
-                     case $wgo5 w1 0.0# of ww3 { DEFAULT ->
-                     case GHC.Prim.divideFloat# 1.0# ww3 of wild2 { DEFAULT ->
-                     GHC.Prim.timesFloat#
-                       (GHC.Prim.timesFloat# (GHC.Prim.int2Float# w2) ww1)
-                       wild2 } } }
-                 } in
-                 case GHC.Prim.tagToEnum#
-                        @ GHC.Types.Bool
-                        (GHC.Prim.>=# ww ww2) of wild {
-                   GHC.Types.False -> $w$j 0# GHC.Types.True -> $w$j 1# } }) -}
 33b1eadb809add1467f84e26df9cb990
   $wgo :: [[GHC.Types.Int]] -> GHC.Prim.Int# -> GHC.Prim.Int#
   {- Arity: 2, Strictness: <S,1*U><L,U>, Inline: [0] -}
@@ -182,20 +138,6 @@ f007a4198937d633cd2ca3a9b76b821a
 b498bab459b2d3cfcb1d2418ede01549
   $wmostSimilar' :: Types.Route -> [Types.Route] -> GHC.Prim.Int#
   {- Arity: 2, Strictness: <S,U><L,1*U>, Inline: [0] -}
-589108afcdb63eac3af41dfbcb7229c9
-  boolToInt :: GHC.Types.Bool -> GHC.Types.Int
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m,
-     Unfolding: InlineRule (1, True, False)
-                (\ (b :: GHC.Types.Bool) ->
-                 case b of wild {
-                   GHC.Types.False -> Routing.boolToInt2
-                   GHC.Types.True -> Routing.boolToInt1 }) -}
-67aa15605e275e87dd2affc13a1bbce0
-  boolToInt1 :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
-a3d71dcbdffb42910cc5e87cf76fe99d
-  boolToInt2 :: GHC.Types.Int
-  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 0#) -}
 ca73e281a8b382047a7197d84fd7eb3c
   coverDemands :: Types.Depot -> [Types.Customer] -> GHC.Types.Bool
   {- Arity: 2,
@@ -254,18 +196,15 @@ b7efc306cc14f7b05cffb7147559c226
                       (\ (ds :: Types.Customer) -> GHC.Classes.$fEq[]_$s$c/= ds x)
                       xs)
                    xxs) -}
-8f63318e03e72583678fa864d38a5d93
+32f6dcf85d9a6a7693e97fb516a9baf7
   fitness ::
-    GHC.Types.Int -> Types.Depot -> [Types.Route] -> GHC.Types.Float
-  {- Arity: 3, Strictness: <S(S),1*U(U)><L,U(U(A,U(U)),U)><S,U>m,
-     Inline: INLINE[0],
-     Unfolding: InlineRule (3, True, False)
-                (\ (w :: GHC.Types.Int)
-                   (w1 :: Types.Depot)
-                   (w2 :: [Types.Route]) ->
-                 case w of ww { GHC.Types.I# ww1 ->
-                 case Routing.$wfitness ww1 w1 w2 of ww2 { DEFAULT ->
-                 GHC.Types.F# ww2 } }) -}
+    System.Random.RandomGen g =>
+    GHC.Types.Int
+    -> Types.Depot
+    -> [Types.Route]
+    -> Control.Monad.Trans.Random.Lazy.Rand g GHC.Types.Float
+  {- Arity: 4,
+     Strictness: <L,U(U,U,U)><L,1*U(U)><L,U(U(A,U(U)),U)><L,U> -}
 c2258f89e8efaba06b8e169a8105b46c
   initPopulation ::
     GHC.Types.Int -> Types.Depot -> [Types.Customer] -> [Types.Route]
@@ -276,12 +215,12 @@ c2258f89e8efaba06b8e169a8105b46c
                    (w1 :: Types.Depot)
                    (w2 :: [Types.Customer]) ->
                  Routing.$winitPopulation w1 w2) -}
-51f3660998f46da25e6212ce9a7b452e
+f33e5cdb38ddd0e04e836e01d02adf51
   mostSimilar :: [Types.Route] -> [Types.Route] -> Types.Route
   {- Arity: 2, Strictness: <S,1*U><L,U>,
      Unfolding: (\ (r1s :: [Types.Route]) (r2s :: [Types.Route]) ->
                  letrec {
-                   go2 :: [Types.Route] -> Types.Route
+                   go :: [Types.Route] -> Types.Route
                      {- Arity: 1, Strictness: <S,1*U> -}
                    = \ (ds :: [Types.Route]) ->
                      case ds of wild {
@@ -292,7 +231,7 @@ c2258f89e8efaba06b8e169a8105b46c
                             : ipv ipv1
                             -> case Routing.$wmostSimilar' x r2s of ww { DEFAULT ->
                                let {
-                                 y :: Types.Route = go2 wild1
+                                 y :: Types.Route = go wild1
                                } in
                                case Routing.$wmostSimilar' y r2s of ww1 { DEFAULT ->
                                case GHC.Prim.tagToEnum#
@@ -305,7 +244,7 @@ c2258f89e8efaba06b8e169a8105b46c
                                       GHC.Types.False -> x GHC.Types.True -> y }
                                  GHC.Types.True -> y } } } } }
                  } in
-                 go2 r1s) -}
+                 go r1s) -}
 a9a9c355dc96f20e108cea7a516fc1eb
   mostSimilar' :: Types.Route -> [Types.Route] -> GHC.Types.Int
   {- Arity: 2, Strictness: <S,U><L,1*U>m, Inline: INLINE[0],
@@ -316,12 +255,12 @@ a9a9c355dc96f20e108cea7a516fc1eb
 2ef02896843a0114c0eaae3f7599ff60
   mostSimilar1 :: [Types.Customer]
   {- Strictness: x -}
-87fc378537eb26d7c94ddaa06dde0099
+a4453e4deaa4a166ef1e6fff65eee901
   mutate ::
     System.Random.RandomGen g =>
     [Types.Route]
     -> Control.Monad.Trans.Random.Lazy.Rand g [Types.Route]
-  {- Arity: 1, Strictness: <L,U(U,U,U)> -}
+  {- Arity: 2, Strictness: <L,U(C(U(1*U(U),U)),C(U(U,U)),U)><L,U> -}
 "SPEC delete @ Customer" [ALWAYS] forall ($dEq :: GHC.Classes.Eq
                                                     Types.Customer)
   Routing.delete @ [GHC.Types.Int] $dEq = Routing.delete_$sdelete

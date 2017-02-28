@@ -1,17 +1,19 @@
 
 ==================== FINAL INTERFACE ====================
-2017-02-26 15:56:42.061834 UTC
+2017-02-28 11:55:36.098981 UTC
 
 interface main@main:Main 8002
-  interface hash: d18709a53b6c7b9db3688a94dd0cafce
-  ABI hash: 4e737f3f9b352b0ffdcccc0a4917fb5a
-  export-list hash: 2aec7e37d4946b10dc3c2950d2223f56
-  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  interface hash: f59de8ba20fa8b987e5cecaa02711139
+  ABI hash: e75e2bdcc3bd921924deb361884c93f1
+  export-list hash: 030e4b9e50fb28061111d890f485e13d
+  orphan hash: ebe9b6f9b2366ad69e21f6c03518c4fb
   flag hash: f30d5fceb6642647752e5e71ec7684b7
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Main.createPlot
+  Main.lolz
   Main.main
   Main.run
 module dependencies: Evolution Grouping Routing Scheduling Types
@@ -243,12 +245,12 @@ import  -/  MonadRandom-0.5.1@MonadRandom-0.5.1-IY6HiWu00vQLARukQW3KMH:Control.M
 import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
 import  -/  base-4.9.1.0:Data.List 07ae2acca6538aa0800bd0a993ac6ac1
 import  -/  base-4.9.1.0:Data.Ord 7fde5c9d64d4c27431689be19182758a
+import  -/  base-4.9.1.0:Data.Traversable 556020d7cf3c4a34a774600512918a37
 import  -/  base-4.9.1.0:Data.Tuple 7dc4bbb45d2e69c991ffac438beeca11
 import  -/  base-4.9.1.0:Debug.Trace a9edf3aec504f4423d8ba829ab373a25
 import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
 import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
 import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
-import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
 import  -/  base-4.9.1.0:System.CPUTime cdb0baf84a69efee0a3a049076e8128a
 import  -/  base-4.9.1.0:System.IO c9de64c5f5407c4cf1c52500c4d15200
@@ -259,36 +261,119 @@ import  -/  data-default-class-0.1.2.0@data-default-class-0.1.2.0-GsXqKN6o1X9jr0
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
 import  -/  lens-4.15.1@lens-4.15.1-JIqePnD6ntW5ZEF4vrpOVi:Control.Lens.Setter b6d2e2db5f51cbded59f37392f681688
-import  -/  Evolution 138c33996f2f5cf0a30692c8327ee093
+import  -/  Evolution 0ee1623eb55630f5b9659d325c207326
   exports: 10dba61f2a15540df6659415010d3f19
-  apply 1836ec47625d583a7b56dfdf90901ef1
+  apply 7649695f42bb39de4c6bcc4979f1b9e6
 import  -/  Grouping c7ff63e20e394437cbf56237a13e87ee
   exports: 20a2b046f550cb7f74e729d1f0cddb41
   grouping af92bfbee821f47f88fba51c0022c719
-import  -/  Routing 11e002ff4ee784a0d2ef45bd7a17af9e
-  exports: eef4be4064c288f3aac3a97cf5d6a0e5
+import  -/  Routing ef38d2023695924e8988b5b9c606e405
+  exports: 5fc9b13a4bbfdd992e135cf154eefe88
   crossover b7efc306cc14f7b05cffb7147559c226
-  fitness 8f63318e03e72583678fa864d38a5d93
+  fitness 32f6dcf85d9a6a7693e97fb516a9baf7
   initPopulation c2258f89e8efaba06b8e169a8105b46c
-  mutate 87fc378537eb26d7c94ddaa06dde0099
-import  -/  Scheduling 9520fda3de293f0ca77a01c4d57a7e53
-  exports: ff6bae359eaecdacded84c047c0fdf97
+  mutate a4453e4deaa4a166ef1e6fff65eee901
+import  -/  Scheduling 7af8ec8dbb0bd381b6ad413b6f98217f
+  exports: c63b7f7791b0048c3b8a0007ef79609d
   crossover 4ee75b14e35359d22e20556a755cd8fe
-  fitness f4f4d936b878bd35d997a3e3777bbb70
-  mutate c7c2925611ce3f4922185e40b2e38ef7
+  fitness 266f8707351473290aadbeb844df7451
+  fitness' 6f965f9d04a6e97940328e9903914648
+  mutate f5d9eb7ba5bc484aa3b9aae7b52d4146
 import  -/  Types 84d440671d91bc7127fd44e7871db9b3
   exports: 031c722d2eaf5c00cf8059beff2d5b0e
+  Customer f75d8487e3b128e128ef94d19db2ae50
   Depot 2dba77e5376bdc0022480a68274372fe
   Route 1575af41b020866d7a49276c2048a2ed
-import  -/  Utils c7969a16242b70abf7faf20be0ad81eb
-  exports: a40b5a2023a5e971678c083e46120cd0
-  position 3a68b41abe4a6c1382463521dfb9f3c8
-  prettySolution 301b5957e3525cfd6469ecf4abf821bd
+import  -/  Utils 217a5add3868c286a5e6b41d101f8178
+  exports: 9ee9c5ee12a628beb47394d23bfdd83e
   routeCycle ad870f1adf9949473205d8ccf8ff23e9
-  routeDistance dcd70eb0656824b9d0965208d2cf332c
 import  -/  random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog:System.Random cc3ef358c669b194cf9fe94db6f2430f
 import  -/  split-0.2.3.1@split-0.2.3.1-FWyXC6nhV0H3AfM8IzrEFk:Data.List.Split c60198a427bfd51d9fb4562c059ec1d2
 import  -/  split-0.2.3.1@split-0.2.3.1-FWyXC6nhV0H3AfM8IzrEFk:Data.List.Split.Internals 25dced234ed01c9c803d678763a4d772
+fee2786ae1e4530d138a534b35f093e4
+  $s$fApplicativeRandT ::
+    GHC.Base.Applicative
+      (Control.Monad.Trans.Random.Lazy.RandT
+         g Data.Functor.Identity.Identity)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ g.
+                  @ (Control.Monad.Trans.Random.Lazy.RandT
+                       g Data.Functor.Identity.Identity)
+                  (Main.$s$fApplicativeRandT_$s$fApplicativeRandT_$cp1Applicative
+                     @ g)
+                  (Control.Monad.Trans.Random.Lazy.$fApplicativeRandT_$cpure
+                     @ g
+                     @ Data.Functor.Identity.Identity
+                     Data.Functor.Identity.$fMonadIdentity)
+                  (Control.Monad.Trans.Random.Lazy.$fApplicativeRandT_$c<*>
+                     @ g
+                     @ Data.Functor.Identity.Identity
+                     Data.Functor.Identity.$fMonadIdentity)
+                  (Control.Monad.Trans.Random.Lazy.$fApplicativeRandT_$c*>
+                     @ g
+                     @ Data.Functor.Identity.Identity
+                     Data.Functor.Identity.$fMonadIdentity)
+                  (Control.Monad.Trans.Random.Lazy.$fApplicativeRandT_$c<*
+                     @ g
+                     @ Data.Functor.Identity.Identity
+                     Data.Functor.Identity.$fMonadIdentity) -}
+6718541927a2cbb4e7d3112f67afa933
+  $s$fApplicativeRandT_$dFunctor ::
+    GHC.Base.Functor Data.Functor.Identity.Identity
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                Data.Functor.Identity.$fFunctorIdentity -}
+129d0af87263f52c267f94c9c28608f9
+  $s$fApplicativeRandT_$s$fApplicativeRandT_$cp1Applicative ::
+    GHC.Base.Functor
+      (Control.Monad.Trans.Random.Lazy.RandT
+         g Data.Functor.Identity.Identity)
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                Main.$s$fApplicativeRandT_$s$fFunctorRandT -}
+c02a48d91b693aa128a2dce66ae536e8
+  $s$fApplicativeRandT_$s$fFunctorRandT ::
+    GHC.Base.Functor
+      (Control.Monad.Trans.Random.Lazy.RandT
+         g Data.Functor.Identity.Identity)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ g.
+                  @ (Control.Monad.Trans.Random.Lazy.RandT
+                       g Data.Functor.Identity.Identity)
+                  (Control.Monad.Trans.Random.Lazy.$fFunctorRandT_$cfmap
+                     @ g
+                     @ Data.Functor.Identity.Identity
+                     Main.$s$fApplicativeRandT_$dFunctor)
+                  (Control.Monad.Trans.Random.Lazy.$fFunctorRandT_$c<$
+                     @ g
+                     @ Data.Functor.Identity.Identity
+                     Main.$s$fApplicativeRandT_$dFunctor) -}
+82a32af142cace245fb0c82b1365986b
+  $s$fMonadRandT ::
+    GHC.Base.Monad
+      (Control.Monad.Trans.Random.Lazy.RandT
+         g Data.Functor.Identity.Identity)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ g.
+                  @ (Control.Monad.Trans.Random.Lazy.RandT
+                       g Data.Functor.Identity.Identity)
+                  (Main.$s$fApplicativeRandT @ g)
+                  (Control.Monad.Trans.Random.Lazy.$fMonadRandT_$c>>=
+                     @ g
+                     @ Data.Functor.Identity.Identity
+                     Data.Functor.Identity.$fMonadIdentity)
+                  (Control.Monad.Trans.Random.Lazy.$fMonadRandT_$c>>
+                     @ g
+                     @ Data.Functor.Identity.Identity
+                     Data.Functor.Identity.$fMonadIdentity)
+                  (Control.Monad.Trans.Random.Lazy.$fMonadRandT_$creturn
+                     @ g
+                     @ Data.Functor.Identity.Identity
+                     Data.Functor.Identity.$fMonadIdentity)
+                  (Control.Monad.Trans.Random.Lazy.$fMonadRandT_$cfail
+                     @ g
+                     @ Data.Functor.Identity.Identity
+                     Data.Functor.Identity.$fMonadIdentity) -}
 d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -301,6 +386,19 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
+7293f129cce02a40b17e12699fb87e9b
+  $wgo ::
+    [[[(GHC.Types.Int, GHC.Types.Int)]]]
+    -> Graphics.Rendering.Chart.Layout.Layout
+         GHC.Types.Int GHC.Types.Int
+    -> Graphics.Rendering.Chart.State.CState
+    -> (# ((),
+           Graphics.Rendering.Chart.Layout.Layout
+             GHC.Types.Int GHC.Types.Int),
+          Graphics.Rendering.Chart.State.CState #)
+  {- Arity: 3,
+     Strictness: <S,1*U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U)><L,U(U,U)>,
+     Inline: [0] -}
 1bc7c385cbd82fb2427ceb7a26092065
   $wrun ::
     GHC.Prim.Int#
@@ -316,6 +414,113 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   {- Arity: 9,
      Strictness: <S,U><L,U(U)><L,U><L,U(U)><L,U><L,U><L,U(U(A,U(U)),U)><L,U><S,U>,
      Inline: [0] -}
+c12e60aaacc1107669002fee79e32542
+  createPlot ::
+    [[[(GHC.Types.Int, GHC.Types.Int)]]] -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,1*U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.createPlot1
+                  `cast`
+                (<[[[(GHC.Types.Int, GHC.Types.Int)]]]>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+51de7728ed5cd03bfaa3c5b5f8d872f4
+  createPlot1 ::
+    [[[(GHC.Types.Int, GHC.Types.Int)]]]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,1*U><S,U>,
+     Unfolding: (\ (cycles :: [[[(GHC.Types.Int, GHC.Types.Int)]]])
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case Graphics.Rendering.Chart.Backend.Diagrams.$wcBackendToFile
+                        @ (Graphics.Rendering.Chart.Renderable.PickFn ())
+                        Graphics.Rendering.Chart.Backend.Diagrams.$fDefaultFileOptions12
+                        Graphics.Rendering.Chart.Backend.Diagrams.SVG
+                        Graphics.Rendering.Chart.Backend.Diagrams.$fDefaultFileOptions1
+                          `cast`
+                        (Sym (GHC.Types.N:IO[0]
+                                  <Graphics.Rendering.Chart.Backend.Diagrams.FontSelector
+                                     GHC.Types.Double>_R))
+                        (case Graphics.Rendering.Chart.Layout.$w$ctoRenderable
+                                @ GHC.Types.Int
+                                @ GHC.Types.Int
+                                GHC.Classes.$fOrdInt
+                                GHC.Classes.$fOrdInt
+                                (case Main.$wgo
+                                        cycles
+                                        Main.createPlot3
+                                        Graphics.Rendering.Chart.State.$fDefaultCState_$cdef of ww { (#,#) ww1 ww2 ->
+                                 case ww1 of wild2 { (,) ds1 s'1 ->
+                                 s'1 } }) of ww { (#,#) ww1 ww2 ->
+                         ww2
+                           Graphics.Rendering.Chart.Backend.Diagrams.$fDefaultFileOptions12 })
+                        Main.createPlot2
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv, GHC.Tuple.() #) }) -}
+cc2738797baedcc1e917edcc752aeed2
+  createPlot2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "images/map.svg"#) -}
+71eb1212842b71786e2160567d579725
+  createPlot3 ::
+    Graphics.Rendering.Chart.Layout.Layout GHC.Types.Int GHC.Types.Int
+  {- Unfolding: (Graphics.Rendering.Chart.Layout.Layout
+                   @ GHC.Types.Int
+                   @ GHC.Types.Int
+                   Graphics.Rendering.Chart.Layout.$fDefaultLayout7
+                   (GHC.Base.Nothing
+                      @ Graphics.Rendering.Chart.Backend.Types.FillStyle)
+                   Main.createPlot_b1
+                   Graphics.Rendering.Chart.Layout.$fDefaultLayout5
+                   Main.createPlot4
+                   Graphics.Rendering.Chart.Layout.$fDefaultLayout3
+                   Graphics.Rendering.Chart.Axis.Types.$fDefaultAxisVisibility_$cdef
+                   Main.createPlot4
+                   Graphics.Rendering.Chart.Axis.Types.$fDefaultAxisVisibility_$cdef
+                   Graphics.Rendering.Chart.Layout.$fDefaultLayout3
+                   (GHC.Types.[]
+                      @ (Graphics.Rendering.Chart.Plot.Types.Plot
+                           GHC.Types.Int GHC.Types.Int))
+                   Graphics.Rendering.Chart.Layout.$fDefaultLayout2
+                   Graphics.Rendering.Chart.Layout.$fDefaultLayout1
+                   GHC.Types.False) -}
+2e8e87b66b5fe8811dc507e56acfbeea
+  createPlot4 ::
+    Graphics.Rendering.Chart.Layout.LayoutAxis GHC.Types.Int
+  {- Strictness: m,
+     Unfolding: (Graphics.Rendering.Chart.Layout.LayoutAxis
+                   @ GHC.Types.Int
+                   Graphics.Rendering.Chart.Layout.$fDefaultLayout4
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   Graphics.Rendering.Chart.Axis.Types.$fDefaultAxisStyle_$cdef
+                   Graphics.Rendering.Chart.Axis.Int.$fPlotValueInt_$cautoAxis
+                   (GHC.Base.id
+                      @ (Graphics.Rendering.Chart.Axis.Types.AxisData GHC.Types.Int))
+                   GHC.Types.False) -}
+0bb776423e53a68f3092111f1dc7970f
+  createPlot_b1 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "MDVRP - Distance "#) -}
+531ac6da154a596f37ee998a5678f1fe
+  lolz ::
+    GHC.Types.Int
+    -> Types.Depot
+    -> [Types.Customer]
+    -> GHC.Types.IO (Types.Depot, [Types.Route])
+  {- Arity: 4, Strictness: <L,U(U)><L,U(U(U,U(U)),U)><L,1*U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.lolz1
+                  `cast`
+                (<GHC.Types.Int>_R
+                 ->_R <Types.Depot>_R
+                 ->_R <[Types.Customer]>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <(Types.Depot, [Types.Route])>_R)) -}
+088c1fdd34439c7c2fbc4416be5be8e0
+  lolz1 ::
+    GHC.Types.Int
+    -> Types.Depot
+    -> [Types.Customer]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (Types.Depot, [Types.Route]) #)
+  {- Arity: 4, Strictness: <L,U(U)><L,U(U(U,U(U)),U)><L,1*U><S,U> -}
 c47054f7897b088ade7865cf4157c8db
   main :: GHC.Types.IO [GHC.Types.Char]
   {- Arity: 1, Strictness: <S,U>,
@@ -388,6 +593,35 @@ e32e829e246ef7c695c7cd98395786fd
                    (w8 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case w of ww { GHC.Types.I# ww1 ->
                  Main.$wrun ww1 w1 w2 w3 w4 w5 w6 w7 w8 }) -}
+"SPEC/Main $fApplicativeRandT _ @ Identity" [ALWAYS] forall @ g
+                                                            ($dMonad :: GHC.Base.Monad
+                                                                          Data.Functor.Identity.Identity)
+  Control.Monad.Trans.Random.Lazy.$fApplicativeRandT @ g
+                                                     @ Data.Functor.Identity.Identity
+                                                     $dMonad
+  = Main.$s$fApplicativeRandT @ g
+"SPEC/Main $fApplicativeRandT_$cp1Applicative _ @ Identity" [ALWAYS] forall @ g
+                                                                            ($dMonad :: GHC.Base.Monad
+                                                                                          Data.Functor.Identity.Identity)
+  Control.Monad.Trans.Random.Lazy.$fApplicativeRandT_$cp1Applicative @ g
+                                                                     @ Data.Functor.Identity.Identity
+                                                                     $dMonad
+  = Main.$s$fApplicativeRandT_$s$fApplicativeRandT_$cp1Applicative
+      @ g
+"SPEC/Main $fFunctorRandT _ @ Identity" [ALWAYS] forall @ g
+                                                        ($dFunctor :: GHC.Base.Functor
+                                                                        Data.Functor.Identity.Identity)
+  Control.Monad.Trans.Random.Lazy.$fFunctorRandT @ g
+                                                 @ Data.Functor.Identity.Identity
+                                                 $dFunctor
+  = Main.$s$fApplicativeRandT_$s$fFunctorRandT @ g
+"SPEC/Main $fMonadRandT _ @ Identity" [ALWAYS] forall @ g
+                                                      ($dMonad :: GHC.Base.Monad
+                                                                    Data.Functor.Identity.Identity)
+  Control.Monad.Trans.Random.Lazy.$fMonadRandT @ g
+                                               @ Data.Functor.Identity.Identity
+                                               $dMonad
+  = Main.$s$fMonadRandT @ g
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

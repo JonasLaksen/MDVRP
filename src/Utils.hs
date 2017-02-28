@@ -22,9 +22,10 @@ prettySolution :: [Route] -> [[Int]]
 prettySolution = map prettyRoute
 
 insertInto :: a -> Int -> [[a]] -> [[a]]
+insertInto x 0 [] = [[x]]
 insertInto _ _ [] = []
 insertInto a i (x:xs)
-    | i <= length x = ((insertInto' a i x):xs)
+    | i < length x = ((insertInto' a i x):xs)
     | otherwise    = x : insertInto a (i - length x) xs
 
 insertInto' :: a -> Int -> [a] -> [a]
@@ -40,6 +41,22 @@ swap :: Int -> [a] -> [a]
 swap _ []  = []
 swap 0 (x:y:ys) = (y:x:ys)
 swap i (x:xs) = x : swap (i-1) xs
+
+nestedSwap :: Int -> Int -> [[a]] -> [[a]]
+nestedSwap i j xxs
+    | i == j = xxs
+    | i > j = nestedSwap j i xxs
+    | otherwise = let (elemI, withoutI) = without i [] xxs
+                      (elemJ, withoutIJ) = without (j-1) [] withoutI
+                      withJ = insertInto elemJ i withoutIJ
+                      withI = insertInto elemI j withJ
+                  in withI
+
+without :: Int -> [[a]] -> [[a]] -> (a,[[a]])
+without i prev (x:xs) = if i < length x
+                    then (x !! i, prev ++ ((take i x ++ drop (i + 1) x):xs))
+                    else without (i - length x) (x:prev) xs
+
 
 swapElementsAt i j ls = [get k x | (k, x) <- zip [0..length ls - 1] ls]
     where get k x | k == i = ls !! j

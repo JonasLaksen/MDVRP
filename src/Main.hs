@@ -18,7 +18,7 @@ import Types
 import Scheduling
 
 main =  do
-    content <- readFile "data/problems/p05"
+    content <- readFile "data/problems/p04"
     let lines =  splitOn "\n" $ Data.List.Utils.replace "\r" "" content
         matrix =  map (\x -> map (\x -> read x :: Int ) . take 5 . filter (\x -> length x > 0) $ splitOn " " x) lines
         (m:n:t:_) = head matrix
@@ -27,50 +27,37 @@ main =  do
         depots = zipWith (\a (b:c:_) -> ((b,c), a)) (take t $ drop (1 + n + t) matrix) $ take t $ drop 1 matrix
 
         g = grouping depots customers
-        (depot:_) = keys g
-        (group:_) = elems g
-
-    let initialPopulation = take 100 $ repeat $ initPopulation m depot group
---     population <- run 1000 100 100 m 0.5 4 depot initialPopulation
-
-    let best = head $ maximumBy (comparing $ Routing.fitness m depot) initialPopulation
-        distance = routeDistance depot best
-
-
-    toFile def ( "images/maplol.svg") $
-        do
-            layout_title .= "MDVRP - Distance " ++ show distance
-            plot (line "Group" $ [routeCycle depot best])
-            plot (points "Depots" [position $ snd depot])
---         lines = map (\route -> routeCycle depot route) best
-
-    putStrLn $ show $ distance
-    rt <- evalRandIO $ apply 10 30 0.4 4 (Scheduling.fitness depot) Scheduling.crossover Scheduling.mutate (take 10 $ repeat best)
-    let shortest = maximumBy (comparing $ Scheduling.fitness depot) rt
-    let d2 = routeDistance depot shortest
-    putStrLn $ show d2
-
-    toFile def ( "images/map.svg") $
-        do
-            layout_title .= "MDVRP - Distance " ++ show d2
-            plot (line "Group" $ [routeCycle depot shortest])
-            plot (points "Depots" [position $ snd depot])
-
+        ds = keys g
+        gs = elems g
+    hahah <- mapM (\(depot,group) -> lolz m depot group) $ zip ds gs
+    createPlot $ map (\(d,rs) -> (map (\r -> routeCycle (d::Depot) (r::Route)) rs)) (hahah::[(Depot, [Route])] )
     return "lol"
+
+lolz :: Int -> Depot -> [Customer] -> IO (Depot,[Route])
+lolz m depot group = do
+    initialPopulation <- evalRandIO $ mapM Routing.mutate $ take 1000 $ repeat $ initPopulation m depot group
+    population <- run 200 10 150 m 0.2 4 depot initialPopulation
+    fitnesses <- evalRandIO $ mapM (Routing.fitness m depot) population
+    let best = fst $ maximumBy (comparing snd) $ zip population fitnesses
+    sols <- mapM (\sol -> evalRandIO $ apply 100 100 0.5 4 (Scheduling.fitness depot) Scheduling.crossover Scheduling.mutate (take 50 $ repeat sol)) best
+    let loll = map (maximumBy (comparing (Scheduling.fitness' depot))) sols
+    return (depot,loll)
 
 run :: Int -> Int -> Int -> Int -> Float -> Int -> Depot -> [[Route]] -> IO ([[Route]])
 run it it2 populationSize m survivalRate fertility depot population
     | it <= 0 = return population
     | otherwise = do
-        finalPopulation <- evalRandIO $ apply it2 populationSize survivalRate fertility (Routing.fitness m depot) Routing.crossover Routing.mutate population
-        let best = maximumBy (comparing $ Routing.fitness m depot) finalPopulation
-            distance = sum $ map (routeDistance depot) best
-            lines = map (\route -> routeCycle depot route) best
-        putStrLn $ show $ prettySolution best
-
-        toFile def ( "images/map" ++ show (it - it2) ++ ".svg") $
-            do
-                layout_title .= "MDVRP - Distance " ++ show distance
-                mapM_ (\x -> plot (line "Group" [x])) $ lines
-                plot (points "Depots" [position $ snd depot])
+        finalPopulation <- trace ("lol") $ evalRandIO $ apply it2 populationSize survivalRate fertility (Routing.fitness m depot) Routing.crossover Routing.mutate population
+        fitnesses <- evalRandIO $ mapM (Routing.fitness m depot) finalPopulation
+        let best = fst $ maximumBy (comparing snd) $ zip finalPopulation fitnesses
+--         createPlot (it-it2) depot best
         run (it - it2) it2 populationSize m survivalRate fertility depot finalPopulation
+
+createPlot :: [[[(Int,Int)]]] -> IO ()
+createPlot cycles = do
+        toFile def ( "images/map.svg") $
+            do
+                layout_title .= "MDVRP - Distance "
+--                 mapM_ (\x -> plot (line "Group" (x::[[(Int,Int)]]))) cycle
+                mapM_ (\c -> plot (line "ok" [c])) $ concat cycles
+--                 plot (line "Group" $ concat cycles)

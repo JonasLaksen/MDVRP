@@ -1,20 +1,22 @@
 
 ==================== FINAL INTERFACE ====================
-2017-02-26 14:33:06.583229 UTC
+2017-02-26 22:57:35.17455 UTC
 
 interface main@main:Utils 8002
-  interface hash: 7de38f667a11cb42ade1cdfc971fc331
-  ABI hash: c7969a16242b70abf7faf20be0ad81eb
-  export-list hash: a40b5a2023a5e971678c083e46120cd0
+  interface hash: cb1c11e783c28e219a904a4ff24271c0
+  ABI hash: 217a5add3868c286a5e6b41d101f8178
+  export-list hash: 9ee9c5ee12a628beb47394d23bfdd83e
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1d2122a9eeb2223310b2d1f91e6dd3a2
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Utils.boolToInt
   Utils.distance
   Utils.insertInto
   Utils.insertInto'
+  Utils.nestedSwap
   Utils.position
   Utils.prettyCustomer
   Utils.prettyRoute
@@ -26,6 +28,7 @@ exports:
   Utils.swap
   Utils.swapElementsAt
   Utils.totalDistance
+  Utils.without
 module dependencies: Types
 package dependencies: base-4.9.1.0 ghc-prim-0.5.0.0
                       integer-gmp-1.0.0.1
@@ -64,10 +67,17 @@ import  -/  Types 84d440671d91bc7127fd44e7871db9b3
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
+55a610251fc4c1db9e8f6ea65589bc7e
+  $winsertInto :: a -> GHC.Prim.Int# -> [[a]] -> [[a]]
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><S,U><S,U>,
+     Inline: [0] -}
 da9579ee8bd85285ba689ad0b124bc6d
   $winsertInto' :: a -> GHC.Prim.Int# -> [a] -> [a]
   {- Arity: 3, HasNoCafRefs, Strictness: <L,U><S,1*U><L,U>,
      Inline: [0] -}
+033eebb53edec3ec8cd3d5046bf0820b
+  $wnestedSwap :: GHC.Prim.Int# -> GHC.Prim.Int# -> [[a]] -> [[a]]
+  {- Arity: 3, Strictness: <S,U><S,U><S,1*U>, Inline: [0] -}
 de61eae7d08cc1e989eec0839e1d31db
   $wrouteCycle ::
     Types.Depot -> [Types.Customer] -> (# Types.Point, [Types.Point] #)
@@ -114,6 +124,23 @@ de61eae7d08cc1e989eec0839e1d31db
                                (go ys) }
                     } in
                     go w1 #)) -}
+7ab437a99d341b7e7c8b309b5764fae0
+  $wwithout :: GHC.Prim.Int# -> [[a]] -> [[a]] -> (# a, [[a]] #)
+  {- Arity: 3, Strictness: <S,U><L,U><S,1*U>, Inline: [0] -}
+793226d97cf29f69389d11ee4aa47ca8
+  boolToInt :: GHC.Types.Bool -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (b :: GHC.Types.Bool) ->
+                 case b of wild {
+                   GHC.Types.False -> Utils.boolToInt2
+                   GHC.Types.True -> Utils.boolToInt1 }) -}
+2005a962e0cc43ba6f82ca046791c66c
+  boolToInt1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
+09ebefeec732ce41e7f95e0f7e8d96ee
+  boolToInt2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
 a28fa076170498cd4f9a77cfa84bae36
   distance :: Types.Point -> Types.Point -> GHC.Types.Float
   {- Arity: 2, HasNoCafRefs,
@@ -139,9 +166,14 @@ a28fa076170498cd4f9a77cfa84bae36
                          (GHC.Prim.+#
                             (GHC.Prim.*# x3 x3)
                             (GHC.Prim.*# x2 x2)))) } } } } } }) -}
-60cd49ced65904c6638f8b1311317d83
+250eaf25fa608c91c6f982518c65dfc6
   insertInto :: a -> GHC.Types.Int -> [[a]] -> [[a]]
-  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><L,1*U(U)><S,1*U> -}
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><S(S),1*U(U)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a (w :: a) (w1 :: GHC.Types.Int) (w2 :: [[a]]) ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 Utils.$winsertInto @ a w ww1 w2 }) -}
 10e87da631121b2189367e2508f280cb
   insertInto' :: a -> GHC.Types.Int -> [a] -> [a]
   {- Arity: 3, HasNoCafRefs, Strictness: <L,U><S(S),1*U(1*U)><L,U>,
@@ -150,6 +182,15 @@ a28fa076170498cd4f9a77cfa84bae36
                 (\ @ a (w :: a) (w1 :: GHC.Types.Int) (w2 :: [a]) ->
                  case w1 of ww { GHC.Types.I# ww1 ->
                  Utils.$winsertInto' @ a w ww1 w2 }) -}
+94bed73ffe11e104153b0e75a8284be6
+  nestedSwap :: GHC.Types.Int -> GHC.Types.Int -> [[a]] -> [[a]]
+  {- Arity: 3, Strictness: <S(S),1*U(U)><S(S),1*U(U)><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a (w :: GHC.Types.Int) (w1 :: GHC.Types.Int) (w2 :: [[a]]) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { GHC.Types.I# ww3 ->
+                 Utils.$wnestedSwap @ a ww1 ww3 w2 } }) -}
 3a68b41abe4a6c1382463521dfb9f3c8
   position :: Types.Entity -> Types.Point
   {- Arity: 1, Strictness: <S,1*U>m,
@@ -257,7 +298,7 @@ a14d48367d28cf9e3b9840a399d19135
 f6795b63defe4e7f697cfdc09ca68749
   swap :: GHC.Types.Int -> [a] -> [a]
   {- Arity: 2, Strictness: <L,1*U(1*U)><S,1*U> -}
-bf81392f6beca91d22792729394e8b17
+0f294782dab2b9811b2bd1cfab33a55c
   swapElementsAt :: GHC.Types.Int -> GHC.Types.Int -> [t] -> [t]
   {- Arity: 3, Strictness: <L,U(U)><L,U(U)><S,U>,
      Unfolding: (\ @ t
@@ -273,7 +314,7 @@ bf81392f6beca91d22792729394e8b17
                         (GHC.Prim.># 0# y) of wild {
                    GHC.Types.False
                    -> let {
-                        lvl2 :: t
+                        lvl3 :: t
                         = case j of ww { GHC.Types.I# ww1 -> GHC.List.$w!! @ t ls ww1 }
                       } in
                       letrec {
@@ -296,7 +337,7 @@ bf81392f6beca91d22792729394e8b17
                                               (GHC.Prim.==# x y3) of wild5 {
                                          GHC.Types.False -> y1
                                          GHC.Types.True -> GHC.List.$w!! @ t ls y2 } }
-                                    GHC.Types.True -> lvl2 } })
+                                    GHC.Types.True -> lvl3 } })
                                  (case GHC.Prim.tagToEnum#
                                          @ GHC.Types.Bool
                                          (GHC.Prim.==# x y) of wild2 {
@@ -348,6 +389,15 @@ bf81392f6beca91d22792729394e8b17
 0394b4036c426f72f70f6466e75b2a7a
   totalDistance1 :: GHC.Types.Float
   {- Strictness: x -}
+cb0f5c6c4983186ec52146d63618afdb
+  without :: GHC.Types.Int -> [[a]] -> [[a]] -> (a, [[a]])
+  {- Arity: 3, Strictness: <S(S),1*U(U)><L,U><S,1*U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a (w :: GHC.Types.Int) (w1 :: [[a]]) (w2 :: [[a]]) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case Utils.$wwithout @ a ww1 w1 w2 of ww2 { (#,#) ww3 ww4 ->
+                 (ww3, ww4) } }) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

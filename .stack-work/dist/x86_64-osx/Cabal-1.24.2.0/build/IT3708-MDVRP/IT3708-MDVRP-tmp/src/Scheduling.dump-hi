@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-02-26 15:37:56.843088 UTC
+2017-02-26 22:50:51.328777 UTC
 
 interface main@main:Scheduling 8002
-  interface hash: 4cb117fe8dd58a638693d002bd22a582
-  ABI hash: 9520fda3de293f0ca77a01c4d57a7e53
-  export-list hash: ff6bae359eaecdacded84c047c0fdf97
+  interface hash: 2aa738fa4234a5a1033182c3051622d3
+  ABI hash: 7af8ec8dbb0bd381b6ad413b6f98217f
+  export-list hash: c63b7f7791b0048c3b8a0007ef79609d
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1d2122a9eeb2223310b2d1f91e6dd3a2
   sig of: Nothing
@@ -14,6 +14,7 @@ interface main@main:Scheduling 8002
 exports:
   Scheduling.crossover
   Scheduling.fitness
+  Scheduling.fitness'
   Scheduling.mutate
   Scheduling.normalize
 module dependencies: Types Utils
@@ -55,10 +56,10 @@ import  -/  Types 84d440671d91bc7127fd44e7871db9b3
   exports: 031c722d2eaf5c00cf8059beff2d5b0e
   Depot 2dba77e5376bdc0022480a68274372fe
   Route 1575af41b020866d7a49276c2048a2ed
-import  -/  Utils c7969a16242b70abf7faf20be0ad81eb
-  exports: a40b5a2023a5e971678c083e46120cd0
+import  -/  Utils 798863e0f6f4105cda86ab7d17a6c3f6
+  exports: 9ee9c5ee12a628beb47394d23bfdd83e
   routeDistance dcd70eb0656824b9d0965208d2cf332c
-  swapElementsAt bf81392f6beca91d22792729394e8b17
+  swapElementsAt 0f294782dab2b9811b2bd1cfab33a55c
 import  -/  random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog:System.Random cc3ef358c669b194cf9fe94db6f2430f
 2e880f7d99278132557c8584855a32ab
   $trModule :: GHC.Types.Module
@@ -86,15 +87,43 @@ a5b8c952039b252ebf7cc9a7635b4258
     -> Control.Monad.Trans.Random.Lazy.Rand g [Types.Route]
   {- Arity: 3,
      Strictness: <L,U(C(U(1*U(U),U)),C(U(U,U)),1*U)><S,1*U><L,U> -}
-f4f4d936b878bd35d997a3e3777bbb70
-  fitness :: Types.Depot -> Types.Route -> GHC.Types.Float
+266f8707351473290aadbeb844df7451
+  fitness ::
+    System.Random.RandomGen g =>
+    Types.Depot
+    -> Types.Route
+    -> Control.Monad.Trans.Random.Lazy.Rand g GHC.Types.Float
+  {- Arity: 3, Strictness: <L,A><L,U(A,U)><L,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ g
+                   ($dRandomGen :: System.Random.RandomGen g)
+                   (depot :: Types.Depot)
+                   (route :: Types.Route) ->
+                 let {
+                   eta :: GHC.Types.Float
+                   = case Utils.routeDistance depot route of wild1 { GHC.Types.F# y ->
+                     case GHC.Prim.divideFloat# 1.0# y of wild2 { DEFAULT ->
+                     GHC.Types.F# wild2 } }
+                 } in
+                 (\ (eta1 :: g) -> (eta, eta1))
+                   `cast`
+                 (Trans
+                      (<g>_R
+                       ->_R Sym (Data.Functor.Identity.N:Identity[0]
+                                     <(GHC.Types.Float, g)>_R))
+                      (Trans
+                           (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                     <g>_N <Data.Functor.Identity.Identity>_R <GHC.Types.Float>_N))
+                           (Sym (Control.Monad.Trans.Random.Lazy.N:RandT[0]) <g>_N <Data.Functor.Identity.Identity>_N <GHC.Types.Float>_N)))) -}
+6f965f9d04a6e97940328e9903914648
+  fitness' :: Types.Depot -> Types.Route -> GHC.Types.Float
   {- Arity: 2, Strictness: <L,U(A,U)><L,1*U>m,
      Unfolding: InlineRule (2, True, False)
                 (\ (depot :: Types.Depot) (route :: Types.Route) ->
                  case Utils.routeDistance depot route of wild1 { GHC.Types.F# y ->
                  case GHC.Prim.divideFloat# 1.0# y of wild2 { DEFAULT ->
                  GHC.Types.F# wild2 } }) -}
-c7c2925611ce3f4922185e40b2e38ef7
+f5d9eb7ba5bc484aa3b9aae7b52d4146
   mutate ::
     System.Random.RandomGen g =>
     Types.Route -> Control.Monad.Trans.Random.Lazy.Rand g Types.Route

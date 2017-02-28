@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-02-26 14:44:34.135227 UTC
+2017-02-28 10:21:33.16516 UTC
 
 interface main@main:Evolution 8002
-  interface hash: 10ad0c2ef3ab96b676edafccc599033e
-  ABI hash: 138c33996f2f5cf0a30692c8327ee093
+  interface hash: e4c35a346ac1031095d88bcb60bb22fd
+  ABI hash: 0ee1623eb55630f5b9659d325c207326
   export-list hash: 10dba61f2a15540df6659415010d3f19
   orphan hash: 9d7a22590b5994b19290d540651ebac7
   flag hash: 1d2122a9eeb2223310b2d1f91e6dd3a2
@@ -54,12 +54,13 @@ import  -/  base-4.9.1.0:GHC.Float 33e2b9ffe427edd6a5c2fd6a3b26703c
 import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
 import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
 import  -/  base-4.9.1.0:GHC.Real 82e4e59051a13dba1da63e1e970a69e6
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  Types 84d440671d91bc7127fd44e7871db9b3
   exports: 031c722d2eaf5c00cf8059beff2d5b0e
-import  -/  Utils c7969a16242b70abf7faf20be0ad81eb
-  exports: a40b5a2023a5e971678c083e46120cd0
+import  -/  Utils 217a5add3868c286a5e6b41d101f8178
+  exports: 9ee9c5ee12a628beb47394d23bfdd83e
 import  -/  random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog:System.Random cc3ef358c669b194cf9fe94db6f2430f
 import  -/  random-shuffle-0.0.4@random-shuffle-0.0.4-97h14tPp7Ru21125sv6IMi:System.Random.Shuffle f4987cf345fa95642672b4cbf037c4b8
 import  -/  split-0.2.3.1@split-0.2.3.1-FWyXC6nhV0H3AfM8IzrEFk:Data.List.Split c60198a427bfd51d9fb4562c059ec1d2
@@ -162,27 +163,46 @@ b63783787544e7159164eafff4ab2250
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-1836ec47625d583a7b56dfdf90901ef1
-  apply ::
+f5ef3f4b5fa049998db990e95b82e3ec
+  $wapply ::
     System.Random.RandomGen g =>
     GHC.Types.Int
     -> GHC.Types.Int
     -> GHC.Types.Float
     -> GHC.Types.Int
-    -> (a -> GHC.Types.Float)
+    -> (a -> Control.Monad.Trans.Random.Lazy.Rand g GHC.Types.Float)
     -> (a -> a -> Control.Monad.Trans.Random.Lazy.Rand g [a])
     -> (a -> Control.Monad.Trans.Random.Lazy.Rand g a)
     -> [a]
     -> Control.Monad.Trans.Random.Lazy.Rand g [a]
-  {- Arity: 1, Strictness: <L,U(U,U,U)> -}
-67ed4a443ae9c950aa83159e5f777077
+  {- Arity: 1, Strictness: <L,U(U,U,U)>, Inline: [0] -}
+7649695f42bb39de4c6bcc4979f1b9e6
+  apply ::
+    (System.Random.RandomGen g, GHC.Show.Show a) =>
+    GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Types.Float
+    -> GHC.Types.Int
+    -> (a -> Control.Monad.Trans.Random.Lazy.Rand g GHC.Types.Float)
+    -> (a -> a -> Control.Monad.Trans.Random.Lazy.Rand g [a])
+    -> (a -> Control.Monad.Trans.Random.Lazy.Rand g a)
+    -> [a]
+    -> Control.Monad.Trans.Random.Lazy.Rand g [a]
+  {- Arity: 2, Strictness: <L,U(U,U,U)><L,A>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, True)
+                (\ @ g
+                   @ a
+                   (w :: System.Random.RandomGen g)
+                   (w1 :: GHC.Show.Show a) ->
+                 Evolution.$wapply @ g @ a w) -}
+39a20229b8e938acb2a6aa665db35f07
   select ::
     System.Random.RandomGen g =>
     GHC.Types.Int
-    -> (a -> GHC.Types.Float)
+    -> (a -> Control.Monad.Trans.Random.Lazy.Rand g GHC.Types.Float)
     -> [a]
     -> Control.Monad.Trans.Random.Lazy.Rand g [a]
-  {- Arity: 4, Strictness: <L,U(U,U,U)><L,U(U)><L,C(U(U))><L,1*U> -}
+  {- Arity: 4, Strictness: <L,U(U,U,U)><L,U(U)><L,C(U)><L,U> -}
 "SPEC/Evolution $fApplicativeRandT _ @ Identity" [ALWAYS] forall @ g
                                                                  ($dMonad :: GHC.Base.Monad
                                                                                Data.Functor.Identity.Identity)

@@ -9,6 +9,7 @@ import Debug.Trace
 import Data.List
 import Data.Ord
 import Evolution
+import qualified Scheduling
 
 initPopulation :: Int -> Depot -> [Customer] -> [Route]
 initPopulation _ _ [] = []
@@ -16,11 +17,14 @@ initPopulation m depot@((d,q),info) customers =
     let (_, newCustomers) = foldr (\c@(_:_:_:_:demand:_) acc@(q,customersInRoute) -> if demand <= q then (q - demand, c:customersInRoute) else acc) (q,[]) customers
     in newCustomers:initPopulation m depot (customers \\ newCustomers)
 
-fitness :: Int -> Depot -> [Route] -> Float
-fitness m depot routes =
-    routeConstraint * demands * (1 / (sum $ map (routeDistance depot) routes))
-        where demands = foldr (*) 1.0 $ map (\route -> if coverDemands depot route then 1.0 else 0.1) routes
-              routeConstraint = fromIntegral $ boolToInt (m >= length routes)
+fitness :: (RandomGen g) => Int -> Depot -> [Route] -> Rand g Float
+fitness m depot routes = do
+    evoRoutes <- mapM (\ route -> apply 3 50 0.5 4 (Scheduling.fitness depot) Scheduling.crossover Scheduling.mutate (take 20 $ repeat route)) $ shrink routes
+    let shortests = map (maximumBy (comparing $ Scheduling.fitness' depot)) evoRoutes
+        totalDistance = sum $ map (routeDistance depot) shortests
+        demands = foldr (*) 1.0 $ map (\route -> if coverDemands depot route then 1.0 else 0.1) routes
+        routeConstraint = fromIntegral $ boolToInt (m >= length routes)
+    return (routeConstraint * demands * (1 / totalDistance))
 
 crossover :: (RandomGen g) => [Route] -> [Route] -> Rand g [[Route]]
 crossover r1s r2s =
@@ -51,19 +55,11 @@ mostSimilar' r1 r2s =
 mutate :: (RandomGen g) => [Route] -> Rand g [Route]
 mutate routes =
     do
-        customers <-  shuffleM $ concat routes
-        (r:rs) <- getRandoms
-        (i:is) <- getRandoms
+        rs <- getRandoms
         ss <- getRandoms
-        rr <- getRandoms
         let
-            chosenCustomers = take (length routes) customers
-            shrimpedRoutes = shrink $ map (\route -> filter (\x -> notElem x chosenCustomers) route) routes
-            shouldExpand = r `mod` (length shrimpedRoutes) >= div (length shrimpedRoutes) 2
-            expandedRoutes = if shouldExpand then shrimpedRoutes ++ [[]] else shrimpedRoutes
-            mutated = foldr (\(customer,r) acc -> insertInto customer (i `mod` (length $ concat acc )) acc ) expandedRoutes $ zip chosenCustomers rs
-            swapped = foldr (\(route, (r1, r2)) acc -> if r1 `mod` 1 == 0 then swapElementsAt (r1 `mod` length route) (r2 `mod` length route) route:acc else route:acc) [] $ zip mutated $ zip ss rr
-        return swapped
+            mutated = shrink $ foldr (\(_,(r,s)) routes -> nestedSwap (r `mod` (sum $ map length routes)) (s `mod` (sum $ map length routes)) routes) routes $ zip [1..length routes `div` 2] $ zip rs ss
+        return mutated
 
 coverDemands :: Depot -> [Customer] -> Bool
 coverDemands ((_,maxLoad),_) customers =

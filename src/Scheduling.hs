@@ -6,8 +6,11 @@ import System.Random
 import Control.Monad.Random
 import Data.List
 
-fitness :: Depot -> Route -> Float
-fitness depot route = 1.0 / routeDistance depot route
+fitness :: (RandomGen g) => Depot -> Route -> Rand g Float
+fitness depot route = return (1.0 / routeDistance depot route)
+
+fitness' :: Depot -> Route -> Float
+fitness' depot route = 1.0 / routeDistance depot route
 
 crossover :: (RandomGen g) => Route -> Route -> Rand g [Route]
 crossover [] _ = return []
